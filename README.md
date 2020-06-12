@@ -1,8 +1,8 @@
 # DB2
 To-Do:
 
-1.
+1. Sinnvolle Sachen 1
 
-2.
+2. Sinnvolle Dinge 2
 
 3.
