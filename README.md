@@ -1,8 +1,8 @@
 # DB2
-Dies eine tolle README Datei!
+To-Do:
 
-Funktioniert das bei euch?
+1.
 
-test
+2.
 
-test2?
+3.
