@@ -1,0 +1,142 @@
+<script >
+  function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+  console.log(this.responseText);
+//document.getElementById("info").innerHTML = this.responseText;
+}
+};
+
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value
+  var name = document.getElementById("lastname").value;
+  var vorname = document.getElementById("name").value;
+  var adresse = document.getElementById("adresse").value;
+
+
+  var zahlungsart = document.querySelector('input[name ="zahlungsart"]:checked').value;
+
+
+
+  xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart);
+
+  console.log("shit");
+}
+
+function signup(){
+    var p1 = document.getElementById("password").value;
+    var p2 = document.getElementById("password1").value;
+    if (p1 != p2 )
+        document.getElementById("info").innerHTML="Passwort stimmt nicht überein" ;
+      else
+      loadDoc();
+    
+}
+
+
+
+</script>
+
+<style>
+p1 {
+color: red;
+
+} 
+</style>
+
+
+<div class="form">
+      
+    <ul class="tab-group">
+    </ul>
+    
+    <div class="tab-content">
+      <div id="signup">   
+        <h1>Sign Up for Free</h1>
+        
+        <form >
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              First Name<span class="req">*</span>
+            </label>
+            <input id = "name" type="text" placeholder="Name" required autocomplete="off" />
+          </div>
+      
+          <div class="field-wrap">
+            <label>
+              Last Name<span class="req">*</span>
+            </label>
+            <input id ="lastname" type="text" placeholder="Nachname" required autocomplete="off"/>
+          </div>
+        </div>
+
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              Username<span class="req">*</span>
+            </label>
+            <input id = "username" type="text" placeholder="username" required autocomplete="off" />
+          </div>
+
+        <div class="field-wrap">
+          <label>
+            Email Address<span class="req">*</span>
+          </label>
+          <input id = "email" type="email" placeholder="Email" required autocomplete="off"/>
+        </div>
+
+        <div class="field-wrap">
+          <label>
+            Adresse<span class="req">*</span>
+          </label>
+          <input id = "adresse" type="text" placeholder="Adresse" required autocomplete="off"/>
+        </div>
+        
+        <div class="field-wrap">
+          <label>
+            Set A Password<span class="req">*</span>
+          </label>
+          <input id ="password" type="password" placeholder="Passwort" required autocomplete="off"/>
+        </div>
+        
+        <div class="field-wrap">
+            <label>
+              Passwort wiederholen<span class="req">*</span>
+            </label>
+            <input id ="password1" type="password" placeholder="Passwort" required autocomplete="off"/>
+          </div>
+          
+          <p1 id="info"></p1>
+
+
+          
+          <br>
+          <p>Bitte geben sie ihre zahlungsart ein<p>
+
+            <input type ="radio" id ="MONATLISCH" name = "zahlungsart" value="MONATLISCH" required autocomplete="off"/>
+             <label 
+              for="MONATLISCH">Monatlisch</label><br>
+
+            <input type ="radio" id ="DIREKT" name = "zahlungsart" value="DIREKT" checked>
+             <label 
+              for="DIREKT">Direkt</label><br>
+          </form>
+
+        <button onclick="signup()"  >los gehts</button>
+
+        
+        
+        </form>
+
+      </div>
+      
+      <div id="login">   
+        
+      
+    </div><!-- tab-content -->
+    
+</div> <!-- /form -->
