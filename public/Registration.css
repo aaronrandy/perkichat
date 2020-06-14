@@ -3,7 +3,6 @@
     background-image: url("picture/Parkhaus.jpg"), -webkit-linear-gradient(45deg, #4A4771 0%, #5b68df 100%);
     background-image: url("picture/Parkhaus.jpg"), -ms-linear-gradient(45deg, #4A4771 0%, #5b68df 100%);
     background-image: url("picture/Parkhaus.jpg"), linear-gradient(45deg, #4A4771 0%, #5b68df 100%);
-    background-size: 100px 100px, cover;
     color: rgba(255, 255, 255, 0.5);
     padding: 14em 0 4em;
 }
