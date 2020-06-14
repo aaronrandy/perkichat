@@ -5,7 +5,10 @@ function loadDoc() {
    
     var data = JSON.parse(xhttp.responseText);
     console.log(data.Status);
-  //document.getElementById("info").innerHTML = this.responseText;
+    if(data.Status == true)
+       document.getElementById("info").innerHTML = "Erfolgreich Registriert";
+    else 
+      document.getElementById("info").innerHTML =  data.Information;
   }
   };
   
@@ -23,8 +26,7 @@ function loadDoc() {
     xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart);
-  
-    console.log("shit");
+ 
   }
   
   function signup(){
