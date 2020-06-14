@@ -17,7 +17,7 @@ function loadDoc() {
     var name = document.getElementById("lastname").value;
     var vorname = document.getElementById("name").value;
     var adresse = document.getElementById("adresse").value;
-  
+    var email = document.getElementById("email").value;
   
     var zahlungsart = document.querySelector('input[name ="zahlungsart"]:checked').value;
   
@@ -25,7 +25,7 @@ function loadDoc() {
   
     xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart);
+    xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart)+"&email="+email;
  
   }
   
