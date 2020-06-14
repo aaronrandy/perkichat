@@ -4,7 +4,7 @@ function loadDoc() {
   if (xhttp.readyState == 4 && xhttp.status == 200) {
    
     var data = JSON.parse(xhttp.responseText);
-    console.log(data.status);
+    console.log(data[0].status);
   //document.getElementById("info").innerHTML = this.responseText;
   }
   };
