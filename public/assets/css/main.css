@@ -2406,6 +2406,10 @@
 		color: #00BC8A;
 	}
 
+	ul.loginsite li:before {
+		color: #000000
+	}
+
 /* Section/Article */
 
 	section.special, article.special {
