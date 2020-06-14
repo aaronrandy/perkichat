@@ -6,16 +6,24 @@
     <title>Login</title>
   </head>
   <body>
-    <div class ="Form">
-        <h1 style="font-size: 24px;">Account Login</h1>
+    <div class ="form">
+        <div class="tab-content">
+        <h1 style="font-size: 24px; text-align: center;">Account Login</h1>
         <ul class="contact">
-            <li class="fa-user" ></li> 
+            <li class="fa-user">
                 <div class="field-wrap">
-                    <input id="name" type="text" placeholder="Username" required autocomplete="off"/>
+                    <input id="username" type="text" placeholder="Username" required autocomplete="off"/>
                 </div>
+            </li> 
+            <li class="fa-lock">
+                <div class="field-wrap">
+                    <input id="password" type="text" placeholder="Password" required autocomplete="off"/>
+                </div>
+            </li> 
         </ul>
+        <button onclick="login()" >Login</button>
         
     </div>
-    <p></p>
+    </div>
   </body>
 </html>
