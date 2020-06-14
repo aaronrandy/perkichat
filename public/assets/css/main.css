@@ -2237,7 +2237,7 @@
 				}
 
 				ul.icons li .icon:before {
-					font-size: 2em;
+					font-size: 5em;
 				}
 
 		ul.contact {
@@ -3344,4 +3344,11 @@
 				padding: 2em 1em;
 			}
 
+		}
+
+		user{
+			margin-left: 10px;
+			font-size: 30px;
+			height: 30px;
+			vertical-align: middle;
 		}
