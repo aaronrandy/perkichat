@@ -1480,7 +1480,7 @@
 		-webkit-transition: color 0.2s ease;
 		-ms-transition: color 0.2s ease;
 		transition: color 0.2s ease;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 		a:hover {
