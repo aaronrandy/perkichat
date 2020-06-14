@@ -18,7 +18,7 @@ function loadDoc() {
     var vorname = document.getElementById("name").value;
     var adresse = document.getElementById("adresse").value;
     var email = document.getElementById("email").value;
-  
+    
     var zahlungsart = document.querySelector('input[name ="zahlungsart"]:checked').value;
   
   
