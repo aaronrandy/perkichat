@@ -1485,7 +1485,7 @@
 
 		a:hover {
 			color: #00BC8A !important;
-			text-decoration: none;
+			text-decoration: underline;
 		}
 
 	strong, b {
