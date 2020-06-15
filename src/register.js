@@ -40,7 +40,7 @@ function loadDoc() {
       }
   }
 
-  $('#myForm').submit(function(e){
+  function SubForm(e){
     e.preventDefault();
     $.ajax({
         url:"http://parkouni.tk/api/Register?apikey=101",
