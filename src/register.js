@@ -40,19 +40,24 @@ function loadDoc() {
       }
   }
 
-  function SubForm(e){
-    e.preventDefault();
-    $.ajax({
-        url:"http://parkouni.tk/api/Register?apikey=101",
-        type:'post',
-        data:$('#myForm').serialize(),
-        success: function(result){
-          alert( result);
-         },
-         error: function(result){
-           alert( result);
-          }
-    });
-});
-
+  function formSubmit(event) {
+    var url = "http://parkouni.tk/api/Register?apikey=101";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, true);
+    request.onload = function() { // request successful
+    // we can use server response to our request now
+      console.log(request.responseText);
+    };
+  
+    request.onerror = function() {
+      // request failed
+      console.log(request.responseText);
+    };
+  
+    request.send(new FormData(event.target)); // create FormData from form that triggered event
+    event.preventDefault();
+  }
+  
+  // and you can attach form submit event like this for example
+  
   
