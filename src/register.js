@@ -1,7 +1,7 @@
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-  if (xhttp.readyState == 4 && xhttp.status == 200) {
+  if (xhttp.readyState == 4 ) {
    
     var data = JSON.parse(xhttp.responseText);
     console.log(data.Status);
@@ -41,18 +41,23 @@ function loadDoc() {
   }
 
   function formSubmit(event) {
-    var url = "http://parkouni.tk/api/Register?apikey=101";
-    var request = new XMLHttpRequest();
-    request.open('POST', url, true);
-    request.onload = function() { // request successful
-    // we can use server response to our request now
-      console.log(request.responseText);
-    };
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 ) {
+   
+    var data = JSON.parse(xhttp.responseText);
+    console.log(data.Status);
+    if(data.Status == true)
+       document.getElementById("info").innerHTML = "Erfolgreich Registriert";
+    else {
+      document.getElementById("info").innerHTML =  data.Information;
+      return false ;
+    }
+  }
+  };
   
-    request.onerror = function() {
-      // request failed
-      console.log(request.responseText);
-    };
+  xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   
     request.send(new FormData(event.target)); // create FormData from form that triggered event
     event.preventDefault();
