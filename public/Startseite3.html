@@ -18,63 +18,84 @@
 					<section>
 						<p>Parko is a new and creative service that selects the perfect parking lot FOR YOU. Just sign up, deposit your preferred vehicle and you are immediately able to pre-order for your selected period. </p>
 						
-						<ul class="contact" style="vertical-align: middle;">
-							<li class="fa-user" style="font-size: 0.7cm;">
-								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="username" type="text" placeholder="Username" required autocomplete="off"/>
-							
-								</div>
-								
-							</li> 
-							<li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
-								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="password" type="text" placeholder="Password" required autocomplete="off"/>
-								</div>
-								
-                            </li> 
-                            <li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
-								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="password2" type="text" placeholder="Confirm Password" required autocomplete="off"/>
-								</div>
-								
-                            </li> 
-                            <!-- Adresse -->
-                            <li class="fa-home" style="font-size: 0.7cm; text-align: center;">
-								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="adress" type="text" placeholder="Adress" required autocomplete="off"/>
-								</div>
-								
-                            </li> 
-                            <!-- E-Mail -->
-                            <li class="fa-envelope" style="font-size: 0.7cm; text-align: center;">
-								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="email" type="text" placeholder="E-Mail" required autocomplete="off"/>
-								</div>
-								
-                            </li> 
+                        <ul class="contact" style="vertical-align: middle;">
+
                             <!-- First Name -->
                             <li class="fa-font" style="font-size: 0.7cm; text-align: center;">
 								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="firstname" type="text" placeholder="First Name" required autocomplete="off"/>
+									<input id="firstname" type="text" placeholder="First Name" required autocomplete="off" style="color: #64409e;"/>
 								</div>
 								
                             </li> 
                             <!-- Last Name -->
                             <li class="fa-font" style="font-size: 0.7cm; text-align: center;">
 								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="lastname" type="text" placeholder="Last Name" required autocomplete="off"/>
+									<input id="lastname" type="text" placeholder="Last Name" required autocomplete="off" style="color: #64409e;"/>
 								</div>
 								
                             </li> 
-                            <!-- Zahlungsart -->
+                            <!-- Adresse -->
+                            <li class="fa-home" style="font-size: 0.7cm; text-align: center;">
+								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
+									<input id="adress" type="text" placeholder="Adress" required autocomplete="off" style="color: #64409e;"/>
+								</div>
+								
+                            </li> 
+                            <!-- E-Mail -->
+                            <li class="fa-envelope" style="font-size: 0.7cm; text-align: center;">
+								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
+									<input id="email" type="text" placeholder="E-Mail" required autocomplete="off" style="color: #64409e;"/>
+								</div>
+								
+                            </li> 
+                            <!-- Username -->
+							<li class="fa-user" style="font-size: 0.7cm;">
+								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
+									<input id="username" type="text" placeholder="Username" required autocomplete="off" style="color: #64409e;"/>
 							
-						</ul>
+								</div>
+								
+                            </li> 
+                            <!-- Password -->
+							<li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
+								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
+									<input id="password" type="text" placeholder="Password" required autocomplete="off" style="color: #64409e;"/>
+								</div>
+								
+                            </li> 
+                            <li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
+								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
+									<input id="password2" type="text" placeholder="Confirm Password" required autocomplete="off" style="color: #64409e;"/>
+								</div>
+								
+                            </li> 
+                            
+                            
+                            <!-- Zahlungsart -->
+                            <br>
+                            
+                                <a ><strong style="color: #00BC8A; font-size: larger;">Payment method:</strong>  </a>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+                            
+                            
+                            <input type="radio" id="DIREKT" name="zahlungsart" value="DIREKT" checked>
+                            <label
+                            for="DIREKT" > <a style="color: #00BC8A; ">Directly</a></label>
+                            &nbsp; &nbsp; &nbsp; &nbsp;
+                            <input type="radio" id="MONATLICH" name="zahlungsart" value="MONATLICH" required
+                            autocomplete="off"/>
+                            <label
+                            for="MONATLICH"><a style="color: #00BC8A; ">Monthly</a></label>
+                            <br>
+                            <br>
+                        
+
 						
 						<!-- <button onclick="login()" >Login</button> -->
 
 						<ul class="actions">
 							<li><a class="button special" onclick="registrierung()">Register</a></li>
-                            <li> &nbsp; &nbsp; &nbsp; &nbsp; <a>  You have an account? </a><a href="Startseite2.html" class="button special">Login</a></li>
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; <a style="#00BC8A">  You have an account? </a><a href="Startseite2.html" class="button special">Login</a></li>
 						</ul>
 					</section>
 				</div>
