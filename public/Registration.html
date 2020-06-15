@@ -21,7 +21,7 @@
 
 
     <div class="tab-content">
-        <Form onsubmit="singup()" method="POST">
+        <Form onsubmit="singup()" name="myForm" id = "myform" method="POST">
         <div id="signup">
             <h1>Sign Up for Free </h1>
 
@@ -47,28 +47,28 @@
                     <label>
                         Username<span class="req">*</span>
                     </label>
-                    <input id="username" type="text" placeholder="username" required autocomplete="off"/>
+                    <input id="username" name="username" type="text" placeholder="username" required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
-                    <input id="email" type="email" placeholder="Email" required autocomplete="off"/>
+                    <input id="email" name="email" type="email" placeholder="Email" required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Adresse<span class="req">*</span>
                     </label>
-                    <input id="adresse" type="text" placeholder="Adresse" required autocomplete="off"/>
+                    <input id="adresse"  name="adresse" type="text" placeholder="Adresse" required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Set A Password<span class="req">*</span>
                     </label>
-                    <input id="password" type="password" placeholder="Passwort" required autocomplete="off"/>
+                    <input id="password" name="password" type="password" placeholder="Passwort" required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">

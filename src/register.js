@@ -18,7 +18,7 @@ function loadDoc() {
     var vorname = document.getElementById("name").value;
     var adresse = document.getElementById("adresse").value;
     var email = document.getElementById("email").value;
-    
+
     var zahlungsart = document.querySelector('input[name ="zahlungsart"]:checked').value;
   
   
@@ -32,10 +32,35 @@ function loadDoc() {
   function signup(){
       var p1 = document.getElementById("password").value;
       var p2 = document.getElementById("password1").value;
-      if (p1 != p2 )
+      if (p1 != p2 ){
           document.getElementById("info").innerHTML="Passwort stimmt nicht überein" ;
-        else
+          return false ;
+      }else{
         loadDoc();
-      
+      }
   }
+
+
+
+  $(document).ready(function(){
+
+    $("#myForm").on('submit', function(){
+      
+            // AJAX Code To Submit Form.
+            $.ajax({
+                type: "POST",
+                url: "http://parkouni.tk/api/Register?apikey=101",
+                data: $('#myForm').serialize(),
+                cache: false,
+                success: function(result){
+                 alert( result);
+                },
+                error: function(result){
+                  alert( result);
+                 }
+           });
+        
+        return false;
+    });
+});
   
