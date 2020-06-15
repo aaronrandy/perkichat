@@ -40,27 +40,19 @@ function loadDoc() {
       }
   }
 
-
-
-  $(document).ready(function(){
-
-    $("#myForm").on('submit', function(){
-      
-            // AJAX Code To Submit Form.
-            $.ajax({
-                type: "POST",
-                url: "http://parkouni.tk/api/Register?apikey=101",
-                data: $('#myForm').serialize(),
-                cache: false,
-                success: function(result){
-                 alert( result);
-                },
-                error: function(result){
-                  alert( result);
-                 }
-           });
-        
-        return false;
+  $('#myForm').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url:"http://parkouni.tk/api/Register?apikey=101",
+        type:'post',
+        data:$('#myForm').serialize(),
+        success: function(result){
+          alert( result);
+         },
+         error: function(result){
+           alert( result);
+          }
     });
 });
+
   
