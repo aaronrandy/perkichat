@@ -16,7 +16,7 @@ function login() {
             {
                 setCookie(data.Hash,document.getElementById("username").value);
                 console.log("angemeldet");
-                window.open("LoginStartseite","_self");
+                window.location.replace("https://parkouni.tk/LoginStartseite");;
             }
             else
                 document.getElementById("info").innerHTML =  data.Information;
