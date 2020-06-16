@@ -1756,7 +1756,7 @@
 	button,
 	.button {
 		background-color: #fafafa;
-		color: #666 !important;
+		color: #666;
 	}
 
 		input[type="submit"]:hover,
@@ -3357,4 +3357,10 @@
 			position: absolute;
 			right: 1rem;
 			top: 1rem;
+		}
+
+		.show-name{
+			position: absolute;
+			right: 5rem;
+			top: 2rem;
 		}
