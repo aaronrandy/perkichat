@@ -1,3 +1,7 @@
+var d = true ;
+if(d)
+  window.onbeforeunload = function() { return "Your work will be lost."; };
+  
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -42,10 +46,7 @@ function loadDoc() {
         loadDoc();
       }
   }
-var d = true ;
-if(d)
-  window.onbeforeunload = function() { return "Your work will be lost."; };
-  
+
 
   
   
