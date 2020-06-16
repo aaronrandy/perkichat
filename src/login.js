@@ -9,7 +9,7 @@ function login() {
             console.log(data.Status);
             if(data.Status == true)
             {
-                setCookie(password,username);
+                setCookie(document.getElementById("password").value,document.getElementById("username").value);
                 alert("angemeldet");
             }
             else
