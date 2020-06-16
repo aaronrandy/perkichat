@@ -13,7 +13,7 @@ function loadDoc() {
   };
   
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value
+    var password = document.getElementById("password").value;
     var name = document.getElementById("lastname").value;
     var vorname = document.getElementById("name").value;
     var adresse = document.getElementById("adresse").value;
@@ -41,6 +41,7 @@ function loadDoc() {
   }
 
   function formSubmit(event) {
+    event.preventDefault();
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
   if (xhttp.readyState == 4 ) {
@@ -60,7 +61,7 @@ function loadDoc() {
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   
     request.send(new FormData(event.target)); // create FormData from form that triggered event
-    event.preventDefault();
+   
   }
   
   // and you can attach form submit event like this for example
