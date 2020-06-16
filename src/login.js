@@ -9,8 +9,8 @@ function login() {
             console.log(data.Status);
             if(data.Status == true)
             {
-                setCookie(document.getElementById("password").value,document.getElementById("username").value);
-                alert("angemeldet");
+                setCookie(data.Hash,document.getElementById("username").value);
+                console.log("angemeldet");
             }
             else
                 document.getElementById("info").innerHTML =  data.Information;
@@ -35,14 +35,14 @@ function setCookie(p,u) {
 function getCookie() {
     var nameEquals ="logindaten=";
     var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
-    alert(whole_cookie.split("&")[1]);
+    console.log(whole_cookie);
     return whole_cookie;
 }
 
     if (getCookie() != ""){
-        alert("Adam stnkt ne luka");
+        console.log(getCookie());
     } else {
-        alert("biite anmelden");
+        console.log("nicht angemeldet");
     }
 
 
