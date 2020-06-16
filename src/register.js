@@ -40,30 +40,8 @@ function loadDoc() {
       }
   }
 
-  function formSubmit(event) {
-    event.preventDefault();
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-  if (xhttp.readyState == 4 ) {
-   
-    var data = JSON.parse(xhttp.responseText);
-    console.log(data.Status);
-    if(data.Status == true)
-       document.getElementById("info").innerHTML = "Erfolgreich Registriert";
-    else {
-      document.getElementById("info").innerHTML =  data.Information;
-      return false ;
-    }
-  }
-  };
+  window.onbeforeunload = function() { return "Your work will be lost."; };
   
-  xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  
-    request.send(new FormData(event.target)); // create FormData from form that triggered event
-   
-  }
-  
-  // and you can attach form submit event like this for example
+
   
   
