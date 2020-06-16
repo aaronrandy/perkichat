@@ -28,7 +28,7 @@ function login() {
 
 }
 function setCookie(p,u) {
-    document.cookie = "logindaten="${p}&${u}"; expires=Fri, 31 Dec 2038 23:59:59 UTC";
+    document.cookie = "logindaten="+p+"&"+u+"; expires=Fri, 31 Dec 2038 23:59:59 UTC";
 
 }
 function getCookie() {
@@ -37,12 +37,12 @@ function getCookie() {
     alert("Hallo");
     return whole_cookie;
 }
-/*const init=function(){
+const init=function(){
     if (getCookie() != ""){
         alert("Adam stnkt ne luka");
     } else {
         alert("biite anmelden");
     }
 }
-*/
+
 

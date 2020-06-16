@@ -13,7 +13,7 @@ function loadDoc() {
   };
   
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value
+    var password = document.getElementById("password").value;
     var name = document.getElementById("lastname").value;
     var vorname = document.getElementById("name").value;
     var adresse = document.getElementById("adresse").value;
@@ -31,7 +31,7 @@ function loadDoc() {
   
   function signup(){
       var p1 = document.getElementById("password").value;
-      var p2 = document.getElementById("password2").value;
+      var p2 = document.getElementById("password1").value;
       if (p1 != p2 ){
           document.getElementById("info").innerHTML="Passwort stimmt nicht überein" ;
           return false ;
