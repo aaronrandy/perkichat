@@ -37,12 +37,12 @@ function getCookie() {
     alert("Hallo");
     return whole_cookie;
 }
-const init=function(){
+/*const init=function(){
     if (getCookie() != ""){
         alert("Adam stnkt ne luka");
     } else {
         alert("biite anmelden");
     }
 }
-
+*/
 
