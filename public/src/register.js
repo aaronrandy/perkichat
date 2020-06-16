@@ -5,8 +5,10 @@ function loadDoc() {
    
     var data = JSON.parse(xhttp.responseText);
     console.log(data.Status);
-    if(data.Status == true)
+    if(data.Status == true){
        document.getElementById("info").innerHTML = "Erfolgreich Registriert";
+       window.location.replace("https://parkouni.tk");
+    }
     else 
       document.getElementById("info").innerHTML =  data.Information;
   }
