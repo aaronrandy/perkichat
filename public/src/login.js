@@ -21,7 +21,7 @@ function login() {
 
 
 
-    xhttp.open("POST", "http://parkouni.tk/api/Login?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Login?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
 
