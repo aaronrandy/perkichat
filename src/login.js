@@ -1,5 +1,7 @@
 function login() {
     var xhttp = new XMLHttpRequest();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 ) {
 
@@ -7,7 +9,7 @@ function login() {
             console.log(data.Status);
             if(data.Status == true)
             {
-                setCookie();
+                setCookie(document.getElementById("password").value,document.getElementById("username").value);
                 alert("angemeldet");
             }
             else
@@ -15,8 +17,7 @@ function login() {
         }
     };
 
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+
 
 
     xhttp.open("POST", "http://parkouni.tk/api/Login?apikey=101", true);
@@ -33,8 +34,8 @@ function setCookie(p,u) {
 }
 function getCookie() {
     var nameEquals ="logindaten=";
-    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];
-    alert("Hallo");
+    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
+    alert(whole_cookie.split("&")[1]);
     return whole_cookie;
 }
 
