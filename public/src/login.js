@@ -1,7 +1,12 @@
 function login() {
     var xhttp = new XMLHttpRequest();
+    
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+
+    if (!username|| username.trim().length === 0 && !password|| password.trim().length === 0  ){
+        document.getElementById("info").innerHTML =  "Empty Username or Password";
+    }else {
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 ) {
 
@@ -25,7 +30,7 @@ function login() {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
 
-
+    }
 
 
 }
