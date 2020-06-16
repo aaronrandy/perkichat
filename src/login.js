@@ -45,6 +45,8 @@ try{
     } else {
         console.log("nicht angemeldet");
     }
+}catch(e){
+
 }
 
 
