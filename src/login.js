@@ -35,6 +35,7 @@ function setCookie(p,u) {
 function getCookie() {
     var nameEquals ="logindaten=";
     var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
+    alert(whole_cookie);
     return whole_cookie;
 }
 
