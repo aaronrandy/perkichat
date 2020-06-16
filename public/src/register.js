@@ -23,7 +23,7 @@ function loadDoc() {
   
   
   
-    xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Register?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart+"&email="+email);
  
@@ -31,7 +31,7 @@ function loadDoc() {
   
   function signup(){
       var p1 = document.getElementById("password").value;
-      var p2 = document.getElementById("password1").value;
+      var p2 = document.getElementById("password2").value;
       if (p1 != p2 ){
           document.getElementById("info").innerHTML="Passwort stimmt nicht überein" ;
           return false ;

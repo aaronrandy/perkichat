@@ -23,7 +23,7 @@ function loadDoc() {
 
 
 
-    xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Register?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart+"&email="+email);
 
@@ -92,4 +92,4 @@ function formSubmit(event) {
     event.preventDefault();
 }
 
-
+window.onbeforeunload = function() { return "Your work will be lost."; };
