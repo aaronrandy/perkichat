@@ -39,11 +39,12 @@ function getCookie() {
     return whole_cookie;
 }
 
+try{
     if (getCookie() != ""){
         console.log(getCookie());
     } else {
         console.log("nicht angemeldet");
     }
-
+}
 
 
