@@ -6,6 +6,7 @@ function loadDoc() {
     var data = JSON.parse(xhttp.responseText);
     console.log(data.Status);
     if(data.Status == true){
+      d = false;
        document.getElementById("info").innerHTML = "Erfolgreich Registriert";
        window.location.replace("https://parkouni.tk");
     }
@@ -41,7 +42,8 @@ function loadDoc() {
         loadDoc();
       }
   }
-
+var d = true ;
+if(d)
   window.onbeforeunload = function() { return "Your work will be lost."; };
   
 
