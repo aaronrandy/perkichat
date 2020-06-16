@@ -1,6 +1,10 @@
 var d = true ;
-if(d)
-  window.onbeforeunload = function() { return "Your work will be lost."; };
+  window.onbeforeunload = function() { 
+    if(d)
+      return "Your work will be lost."; 
+    else 
+      return null;
+    };
   
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
