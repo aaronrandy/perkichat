@@ -10,8 +10,7 @@ function loadDoc() {
             if(data.Status == true){
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
-                document.getElementById('show_name').value = Kunde;
-                document.getElementById('displaynameintext').value = Kunde;
+                document.getElementById('show_name').value = "Kunde";
             }
             else
                 console.log(data.Information);
