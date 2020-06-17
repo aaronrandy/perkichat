@@ -1,4 +1,6 @@
-/*function loadDoc() {
+function loadDoc() {
+    var username = getCookie().split("&")[0];
+    var password = getCookie().split("&")[1];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 ) {
@@ -15,16 +17,15 @@
 
     xhttp.open("GET", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart+"&email="+email);
+    xhttp.send("username="+username+"&password="+password);
    
 }
-*/
+
 
 
 function dosomething(){
  
-    var username = getCookie().split("&")[0];
-    var password = getCookie().split("&")[1];
+ 
     console.log("Username: " +username + "Passwor: "+password);
     
 
