@@ -11,6 +11,7 @@ function loadDoc() {
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
                 document.getElementById('show_name').value = Kunde;
+                document.getElementById('displaynameintext').value = Kunde;
             }
             else
                 console.log(data.Information);
