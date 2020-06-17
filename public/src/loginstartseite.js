@@ -39,12 +39,12 @@ function loadVorbestellung() {
                 //document.getElementById('showname').innerHTML = Kunde.Name;
                 if(data.length > 0){
                     var temp = ";"
-                    data.forEach(u){
+                    data.forEach((u)=>{
                         temp+="<tr>";
                         temp+="<td>"+u.nummer+"</td>";
                         temp+="<td>"+u.Von+"</td>";
                         temp+="<td>"+u.Bis+"</td></tr>";
-                    }
+                    })
                     document.getElementById("vorbestellungfuellen").innerHTML = temp;
                 }
             }
