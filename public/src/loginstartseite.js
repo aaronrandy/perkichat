@@ -8,7 +8,7 @@ function loadDoc() {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                var Kunde = Json.parse(data.Information);
+                var Kunde = (data.Information);
                 console.log(Kunde.Name);
             }
             else
