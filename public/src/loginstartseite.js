@@ -13,7 +13,7 @@ function loadDoc() {
                 document.getElementById('showname').innerHTML = Kunde.Name;
             }
             else
-                console.log(data.Information);
+                 window.location.replace("https://parkouni.tk/404");
         }
     };
 
