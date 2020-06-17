@@ -8,9 +8,9 @@ function loadDoc() {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true)
-                document.getElementById("info").innerHTML = "Erfolgreich Registriert";
+                console.log(data.Information);
             else
-                document.getElementById("info").innerHTML =  data.Information;
+                console.log(data.Information);
         }
     };
 
