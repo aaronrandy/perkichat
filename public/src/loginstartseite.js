@@ -28,8 +28,9 @@ function getCookie() {
 }
 
 function getUser(){
-    var usernamesplit =document.cookie.split(nameEquals)[1].split(";")[0];
-    console.log(usernamesplit[0]);
+    //var usernamesplit =document.cookie.split(nameEquals)[1].split(";")[0];
+    var usernamesplit = document.cookie.split(";");
+    console.log(usernamesplit[1]);
     return usernamesplit;
 
 }
