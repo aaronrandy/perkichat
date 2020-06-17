@@ -9,7 +9,7 @@ function loadDoc() {
             console.log(data.Status);
             if(data.Status == true){
                 var Kunde = (data.Information);
-                console.log(Kunde.Name);
+                console.log(Kunde);
             }
             else
                 console.log(data.Information);
