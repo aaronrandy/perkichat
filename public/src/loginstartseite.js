@@ -15,7 +15,7 @@ function loadDoc() {
     };
 
     console.log("Username: " +username + "Passwor: "+password);
-    xhttp.open("GET", "https://parkouni.tk/api/Kunde?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
    
