@@ -23,8 +23,8 @@
 
 function dosomething(){
  
-    var username = getCookie().split("&")[1];
-    var password = getCookie().split("&")[0];
+    var username = getCookie().split("&")[0];
+    var password = getCookie().split("&")[1];
     console.log("Username: " +username + "Passwor: "+password);
     
 
