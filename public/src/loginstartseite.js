@@ -13,10 +13,10 @@ function loadDoc() {
     };
 
 
-    xhttp.open("POST", "https://parkouni.tk/api/Register?apikey=101", true);
+    xhttp.open("GET", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart+"&email="+email);
-
+    $.getJSON(xhttp);
 }
 
 
@@ -28,8 +28,9 @@ function getCookie() {
 }
 
 function getUser(){
-    var usernamesplit = document.cookie.split[1](";");
-    console.log(usernamesplit);
+    //var usernamesplit =document.cookie.split(nameEquals)[1].split(";")[0];
+    var usernamesplit = document.cookie.split(";");
+    console.log(usernamesplit[1]);
     return usernamesplit;
 
 }
