@@ -10,13 +10,14 @@ function loadDoc() {
             if(data.Status == true){
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
+                document.getElementById('show_name').value = Kunde;
             }
             else
                 console.log(data.Information);
         }
     };
 
-    console.log("Username: " +username + "Passwor: "+password);
+    console.log("Username: " +username + "Passwort: "+password);
     xhttp.open("POST", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
