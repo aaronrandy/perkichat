@@ -1,21 +1,23 @@
 function loadDoc() {
-    var username = getCookie().split("&")[0];
-    var password = getCookie().split("&")[1];
+    var username = getCookie().split("&")[1];
+    var password = getCookie().split("&")[0];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 ) {
 
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
-            if(data.Status == true)
-                console.log(data.Information);
+            if(data.Status == true){
+                var Kunde = (data.Information);
+                console.log(Kunde.Name);
+            }
             else
                 console.log(data.Information);
         }
     };
 
     console.log("Username: " +username + "Passwor: "+password);
-    xhttp.open("GET", "https://parkouni.tk/api/Kunde?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
    
@@ -29,6 +31,6 @@ function getCookie() {
     return whole_cookie;
 }
 
-
+loadDoc();
 
 window.onbeforeunload = function() { return "Your work will be lost."; };
