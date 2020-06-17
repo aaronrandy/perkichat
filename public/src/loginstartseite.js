@@ -8,8 +8,8 @@ function loadDoc() {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                var Kunde = (data.Information);
-                console.log(Kunde);
+                var Kunde = JSON.parse(data.Information);
+                console.log(Kunde.Name);
             }
             else
                 console.log(data.Information);
