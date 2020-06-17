@@ -14,7 +14,7 @@ function loadDoc() {
     var data = JSON.parse(xhttp.responseText);
     console.log(data.Status);
     if(data.Status == true){
-      d = false;
+        d = false;
        document.getElementById("info").innerHTML = "Erfolgreich Registriert";
        window.location.replace("https://parkouni.tk");
     }
