@@ -27,6 +27,13 @@ function getCookie() {
     return whole_cookie;
 }
 
+function getUser(){
+    var usernamesplit = document.cookie.split[1](";");
+    console.log(usernamesplit);
+    return usernamesplit;
+
+}
+
 function readCookie(cname){
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -55,6 +62,6 @@ function checkCookie() {
     }
 }
 
-
+getUser();
 
 window.onbeforeunload = function() { return "Your work will be lost."; };
