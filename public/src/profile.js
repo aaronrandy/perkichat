@@ -11,7 +11,7 @@ function loadDoc() {
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
                 document.getElementById('namedata').innerHTML = Kunde.Vorname + " " + Kunde.Name;
-                document.getElementById('usernamedata').innerHTML = Kunde.username;
+                document.getElementById('userdata').innerHTML = Kunde.username;
                 document.getElementById('adressdata').innerHTML = Kunde.Adresse;
                 document.getElementById('subdata').innerHTML = Kunde.Zahlungsart;
                 document.getElementById('infdata').innerHTML = Kunde.Information;

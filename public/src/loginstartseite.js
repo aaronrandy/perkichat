@@ -10,7 +10,7 @@ function loadDoc() {
             if(data.Status == true){
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
-                document.getElementById('showname').innerHTML = Kunde.Name;
+                document.getElementById('showname').innerHTML = Kunde.Vorname + " " + Kunde.Name;;
             }
             else
                  window.location.replace("https://parkouni.tk/404");
