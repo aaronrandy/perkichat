@@ -44,7 +44,7 @@ function loadVorbestellung() {
     };
 
     console.log("Username: " +username + "Passwort: "+password);
-    xhttp.open("POST", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Vorbestellungen?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
 
