@@ -1,19 +1,30 @@
+var d = true ;
+  window.onbeforeunload = function() { 
+    if(d)
+      return "Your work will be lost."; 
+    else 
+      return null;
+    };
+  
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-  if (xhttp.readyState == 4 && xhttp.status == 200) {
+  if (xhttp.readyState == 4 ) {
    
     var data = JSON.parse(xhttp.responseText);
     console.log(data.Status);
-    if(data.Status == true)
+    if(data.Status == true){
+        d = false;
        document.getElementById("info").innerHTML = "Erfolgreich Registriert";
+       window.location.replace("https://parkouni.tk");
+    }
     else 
       document.getElementById("info").innerHTML =  data.Information;
   }
   };
   
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value
+    var password = document.getElementById("password").value;
     var name = document.getElementById("lastname").value;
     var vorname = document.getElementById("name").value;
     var adresse = document.getElementById("adresse").value;
@@ -23,7 +34,7 @@ function loadDoc() {
   
   
   
-    xhttp.open("POST", "http://parkouni.tk/api/Register?apikey=101", true);
+    xhttp.open("POST", "https://parkouni.tk/api/Register?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password+"&name="+name+"&vorname="+vorname+"&adresse="+adresse+"&zahlungsart="+zahlungsart+"&email="+email);
  
@@ -31,7 +42,7 @@ function loadDoc() {
   
   function signup(){
       var p1 = document.getElementById("password").value;
-      var p2 = document.getElementById("password1").value;
+      var p2 = document.getElementById("password2").value;
       if (p1 != p2 ){
           document.getElementById("info").innerHTML="Passwort stimmt nicht überein" ;
           return false ;
@@ -41,26 +52,5 @@ function loadDoc() {
   }
 
 
-
-  $(document).ready(function(){
-
-    $("#myForm").on('submit', function(){
-      
-            // AJAX Code To Submit Form.
-            $.ajax({
-                type: "POST",
-                url: "http://parkouni.tk/api/Register?apikey=101",
-                data: $('#myForm').serialize(),
-                cache: false,
-                success: function(result){
-                 alert( result);
-                },
-                error: function(result){
-                  alert( result);
-                 }
-           });
-        
-        return false;
-    });
-});
+  
   
