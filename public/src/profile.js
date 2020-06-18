@@ -37,7 +37,7 @@ function getcars() {
     var password = getCookie().split("&")[0];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
+        if (xhttp.readyState == 4 ) {
 
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
