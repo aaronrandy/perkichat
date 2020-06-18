@@ -1,4 +1,4 @@
-var htmlCalendar ='<div STYLE="display: none"  id="calendarID">\n' +
+var htmlCalendar =
     '                    <table border=1 id=\'calendar\'>\n' +
     '                        <tr style=\'visibility:collapse;\' hidden>\n' +
     '                            <td colspan=7 id=\'date_memory\'>---</td>\n' +
@@ -90,8 +90,8 @@ var htmlCalendar ='<div STYLE="display: none"  id="calendarID">\n' +
     '\n' +
     '                    <br />\n' +
     '                    <br />\n' +
-    '\n' +
-    '                </div>' ;
+    '\n'
+                    ;
 var ausgewaelt=0;
 
 
