@@ -17,7 +17,18 @@
 
 <script type="text/javascript" src="src/Vorbestellen/calendar.js"></script>
 <link rel="stylesheet" type="text/css" href="src/Vorbestellen/calendar.css" />
-<script type="text/javascript" src="src/Vorbestellen/vorbestellen.js"></script>
+<!-- <script type="text/javascript" src="src/Vorbestellen/vorbestellen.js"></script> -->
+<script>
+    function showCalendar1() {
+        var x = document.getElementById("calendarID");
+        console.log("element " + x);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
 <style>
     a:hover {
         color: #1d1c3b !important;
@@ -79,7 +90,7 @@
                 <ul class="actions">
                     <li><a onclick="showCalendar1()" class="button alt">Vorbestellen</a></li>
                 </ul>
-                <div hidden  id="calendarID">
+                <div STYLE="display: none"  id="calendarID">
                     <table border=1 id='calendar'>
                         <tr style='visibility:collapse;' hidden>
                             <td colspan=7 id='date_memory'>---</td>
@@ -216,13 +227,15 @@
 
 
 
+
+
 <!-- Contact -->
 <section id="contact" class="wrapper">
     <div class="inner split">
         <section>
             <h2>Contact</h2>
             <p>If you have any suggestions or request you wish us to follow in our upcoming updates feel free to contact us.</p>
-            <form action="mailto:group40@web.de?subject=Parko" class="alt" method="POST">
+            <form>
                 <div class="row uniform">
                     <div class="6u 12u$(xsmall)">
                         <input name="name" placeholder="Name" type="text">
