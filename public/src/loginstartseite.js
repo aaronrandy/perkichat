@@ -8,7 +8,7 @@ function loadDoc() {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                var Kunde = JSON.parse(data.Information);
+                var Kunde = JSON.parse(data.Information)[0];
                 console.log(Kunde.Name);
                 document.getElementById('showname').innerHTML = Kunde.Vorname + " " + Kunde.Name;;
             }
@@ -29,27 +29,37 @@ function loadVorbestellung() {
     var password = getCookie().split("&")[0];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 ) {
-
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
-                console.log(Vorbestellung);
-                //document.getElementById('showname').innerHTML = Kunde.Name;
-                if(data.length > 0){
-                    var temp = ";"
-                    data.forEach((u)=>{
-                        temp+="<tr>";
-                        temp+="<td>"+u.nummer+"</td>";
-                        temp+="<td>"+u.Von+"</td>";
-                        temp+="<td>"+u.Bis+"</td></tr>";
-                    })
-                    document.getElementById("vorbestellungfuellen").innerHTML = temp;
-                }
+                     console.log(Vorbestellung);
+                     console.log(Vorbestellung);
+                var tabele  = document.getElementById('vorbestellungfuellen');
+                if(Array.isArray(Vorbestellung))
+                    for(let x of Vorbestellung) {
+                    
+                    tabele.innerHTML += '  <tr> \n'+
+                    ' <td>'+x.von+'</td> \n'+
+                    ' <td>'+x.bis+'</td> \n'+
+                    ' <td>'+x.Kennzeichen+'</td> \n'+
+                    ' <td>'+x.Bemerkung+'</td> \n'+
+                        '<button type="button" class="btn btn-danger">Löschen</button> \n'+
+                    '</tr> \n' ;
+                     }
+                 else {
+                    tabele.innerHTML = '  <tr> \n'+
+                                ' <td>'+Vorbestellung.von+'</td> \n'+
+                                ' <td>'+Vorbestellung.bis+'</td> \n'+
+                                ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
+                                ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
+                                '<button type="button" class="btn btn-danger">Löschen</button> \n'+
+                     '</tr> \n' ;
+                 }
             }
-            else
-                console.log(data.Information);
+            else if(xhttp.readyState == 4 && xhttp.status != 200)
+             window.location.replace("https://parkouni.tk/404");
         }
     };
 
