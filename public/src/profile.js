@@ -3,7 +3,7 @@ function loadDoc() {
     var password = getCookie().split("&")[0];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 ) {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
@@ -19,12 +19,12 @@ function loadDoc() {
                 document.getElementById('pay').innerHTML = "Payment Method: "+ Kunde.KontoTyp;
                 
             }
-            else
+            else if(xhttp.readyState == 4 && xhttp.status != 200)
                 window.location.replace("https://parkouni.tk/404");
         }
     };
 
-    console.log("Username: " +username + "Passwort: "+password);
+   
     xhttp.open("POST", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
@@ -37,7 +37,7 @@ function getcars() {
     var password = getCookie().split("&")[0];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 ) {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
@@ -54,10 +54,11 @@ function getcars() {
             else
                 document.getElementById('vec').innerHTML = "Vehicles: No Vehicles";
         }
-      
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+         window.location.replace("https://parkouni.tk/404");
     };
 
-    console.log("Username: " +username + "Passwort: "+password);
+ 
     xhttp.open("POST", "https://parkouni.tk/api/Fahrzeuge?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
@@ -69,7 +70,7 @@ function getcars() {
 function getCookie() {
     var nameEquals ="logindaten=";
     var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
-    console.log(whole_cookie);
+   
     return whole_cookie;
 }
 
