@@ -10,10 +10,10 @@ function loadDoc() {
             if(data.Status == true){
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
-                document.getElementById('showname').innerHTML = Kunde.Name;
+                document.getElementById('showname').innerHTML = Kunde.Vorname + " " + Kunde.Name;;
             }
             else
-                console.log(data.Information);
+                 window.location.replace("https://parkouni.tk/404");
         }
     };
 
@@ -72,4 +72,4 @@ function getCookie() {
 loadDoc();
 loadVorbestellung();
 
-window.onbeforeunload = function() { return "Your work will be lost."; };
+

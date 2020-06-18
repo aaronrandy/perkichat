@@ -59,7 +59,7 @@
                 <!-- Username -->
                 <li class="fa-user" style="font-size: 0.7cm;">
                     <div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-                        <input id="username" type="text" placeholder="Username" required autocomplete="off"
+                        <input id="username" type="text" placeholder="Username" maxlength="10" required autocomplete="off"
                                style="color: #64409e;"/>
 
                     </div>
@@ -68,14 +68,14 @@
                 <!-- Password -->
                 <li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
                     <div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-                        <input id="password" type="password" placeholder="Password" required autocomplete="off"
+                        <input id="password" type="password" placeholder="Password" maxlength="50" required autocomplete="off"
                                style="color: #64409e;"/>
                     </div>
 
                 </li>
                 <li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
                     <div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-                        <input id="password2" type="password" placeholder="Confirm Password" required autocomplete="off"
+                        <input id="password2" type="password" placeholder="Confirm Password" maxlength="50" required autocomplete="off"
                                style="color: #64409e;"/>
                     </div>
 
@@ -146,7 +146,7 @@
             <h2>Contact</h2>
             <p>If you have any suggestions or request you wish us to follow in our upcoming updates feel free to contact
                 us.</p>
-            <form action="#" class="alt" method="POST">
+            <form action="mailto:group40@web.de?subject=Parko" class="alt" method="POST">
                 <div class="row uniform">
                     <div class="6u 12u$(xsmall)">
                         <input name="name" placeholder="Name" type="text">
