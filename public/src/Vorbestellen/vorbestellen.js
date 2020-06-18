@@ -90,6 +90,7 @@ var htmlCalendar =
     '\n' +
     '                    <br />\n' +
     '                    <br />\n' +
+
     '\n'
                     ;
 var ausgewaelt=0;
