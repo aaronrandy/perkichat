@@ -12,7 +12,7 @@ function loadDoc() {
                 console.log(Kunde.Name);
                 document.getElementById('name').innerHTML = "Name: "+ Kunde.Vorname + " " + Kunde.Name;
                 document.getElementById('user').innerHTML = "Username: "+ Kunde.username;
-                document.getElementById('address').innerHTML = "Adress: "+Kunde.Adresse;
+                document.getElementById('address').innerHTML = "Adresse: "+Kunde.Adresse;
                 document.getElementById('sub').innerHTML = "Subcription: "+ Kunde.Zahlungsart;
                 document.getElementById('inf').innerHTML = "Information: "+ Kunde.Information;
                 document.getElementById('email').innerHTML = "Email: "+ Kunde.email;
