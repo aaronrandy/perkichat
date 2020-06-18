@@ -46,6 +46,7 @@ function loadVorbestellung() {
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
+                        '<button type="button" class="btn btn-danger">Löschen</button> \n'+
                     '</tr> \n' ;
                      }
                  else {
@@ -54,6 +55,7 @@ function loadVorbestellung() {
                                 ' <td>'+Vorbestellung.bis+'</td> \n'+
                                 ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
                                 ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
+                                '<button type="button" class="btn btn-danger">Löschen</button> \n'+
                      '</tr> \n' ;
                  }
             }
