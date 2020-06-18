@@ -10,13 +10,13 @@ function loadDoc() {
             if(data.Status == true){
                 var Kunde = JSON.parse(data.Information);
                 console.log(Kunde.Name);
-                document.getElementById('namedata').innerHTML = Kunde.Vorname + " " + Kunde.Name;
-                document.getElementById('userdata').innerHTML = Kunde.username;
-                document.getElementById('addressdata').innerHTML = Kunde.Adresse;
-                document.getElementById('subdata').innerHTML = Kunde.Zahlungsart;
-                document.getElementById('infdata').innerHTML = Kunde.Information;
-                document.getElementById('emaildata').innerHTML = Kunde.email;
-                document.getElementById('paydata').innerHTML = "Empty";
+                document.getElementById('name').innerHTML = "Name: "+ Kunde.Vorname + " " + Kunde.Name;
+                document.getElementById('user').innerHTML = "Username: "+ Kunde.username;
+                document.getElementById('address').innerHTML = "Adress: "+Kunde.Adresse;
+                document.getElementById('sub').innerHTML = "Subcription: "+ Kunde.Zahlungsart;
+                document.getElementById('inf').innerHTML = "Information: "+ Kunde.Information;
+                document.getElementById('email').innerHTML = "Email: "+ Kunde.email;
+                document.getElementById('pay').innerHTML = "Payment Method: Empty";
             }
             else
                 window.location.replace("https://parkouni.tk/404");
