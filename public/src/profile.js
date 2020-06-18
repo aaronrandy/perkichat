@@ -8,7 +8,7 @@ function loadDoc() {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                var Kunde = JSON.parse(data.Information);
+                var Kunde = JSON.parse(data.Information)[0];
                 console.log(Kunde.Information);
                 document.getElementById('name').innerHTML = "Name: "+ Kunde.Vorname + " " + Kunde.Name;
                 document.getElementById('user').innerHTML = "Username: "+ Kunde.username;
