@@ -30,13 +30,12 @@ function loadVorbestellung() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
-
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
                      console.log(Vorbestellung);
-              
+                     console.log(Vorbestellung);
                 var tabele  = document.getElementById('vorbestellungfuellen');
                 if(Array.isArray(Vorbestellung))
                     for(let x of Vorbestellung) {
