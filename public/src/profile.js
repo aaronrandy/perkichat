@@ -16,7 +16,7 @@ function loadDoc() {
                 document.getElementById('sub').innerHTML = "Subcription: "+ Kunde.Zahlungsart;
                 document.getElementById('inf').innerHTML = "Information: "+ Kunde.Information;
                 document.getElementById('email').innerHTML = "Email: "+ Kunde.email;
-                document.getElementById('pay').innerHTML = "Payment Method: Empty";
+                document.getElementById('pay').innerHTML = "Payment Method: "+ Kunde.KontoTyp;
             }
             else
                 window.location.replace("https://parkouni.tk/404");
