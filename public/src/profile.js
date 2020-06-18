@@ -44,10 +44,10 @@ function getcars() {
             if(data.Status == true ){
                 var Kunde = JSON.parse(data.Information);
                 var inf= "";
-                console.log(Kunde.Information);
-                Kunde.forEach(x => {
+                console.log(Kunde);
+                for(let x of Kunde) {
                   inf +=  x.Kennzeichen;
-                });
+                }
                 document.getElementById('vec').innerHTML = "Vehicles: "+ inf;
                 
             }
