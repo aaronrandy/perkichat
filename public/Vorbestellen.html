@@ -9,15 +9,39 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href="/css/bootstrap.css" rel = "stylesheet" />
     <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!-- Standalone -->
+    <link href="dist/css/datepicker.min.css" rel="stylesheet" />
+    <!-- For Bootstrap 4 -->
+    <link href="dist/css/datepicker-bs4.min.css" rel="stylesheet" />
+    <!-- For Bulma -->
+    <link href="dist/css/datepicker-bulma.min.css" rel="stylesheet" />
+    <!-- For Foundation -->
+    <link href="dist/css/datepicker-foundation.min.css" rel="stylesheet" />
 
+
+    <link rel="icon" href="picture/parking-sign.png" type="image/x-icon">
 
 
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
 
+<script src="dist/js/datepicker-full.min.js"></script>
+<script src="src/Vorbestellen/vorbestellen.js"></script>
 <script type="text/javascript" src="src/Vorbestellen/calendar.js"></script>
 <link rel="stylesheet" type="text/css" href="src/Vorbestellen/calendar.css" />
-<script type="text/javascript" src="src/Vorbestellen/vorbestellen.js"></script>
+<!-- <script type="text/javascript" src="src/Vorbestellen/vorbestellen.js"></script> -->
+<script>
+    function showCalendar1() {
+        var x = document.getElementById("calendarID");
+        console.log("element " + x);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
+
 <style>
     a:hover {
         color: #1d1c3b !important;
@@ -77,133 +101,109 @@
                 <p>TODO</p>
                 <p>Test</p>
                 <ul class="actions">
-                    <li><a onclick="showCalendar()" class="button alt">Vorbestellen</a></li>
+                    <li><a onclick="ShowKalender(1)" class="button alt">Vorbestellen</a></li>
                 </ul>
-                <div hidden  id="calendarID">
-                    <table border=1 id='calendar'>
-                        <tr style='visibility:collapse;' hidden>
-                            <td colspan=7 id='date_memory'>---</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_head'><a  class='calendar_link'
-                                                         href='javascript:prevMonth()'> &laquo;</a></td>
-                            <td colspan=5 class='calendar_head_month' id='calendar_month'>
-                                ---</td>
-                            <td class='calendar_head'><a class='calendar_link'
-                                                         href='javascript:nextMonth()'> &raquo;</a></td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_day'>Mo</td>
-                            <td class='calendar_day'>Di</td>
-                            <td class='calendar_day'>Mi</td>
-                            <td class='calendar_day'>Do</td>
-                            <td class='calendar_day'>Fr</td>
-                            <td class='calendar_day'>Sa</td>
-                            <td class='calendar_day'>So</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_entry' id='calendar_entry_1'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_2'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_3'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_4'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_5'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_6'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_7'>-x-</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_entry' id='calendar_entry_8'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_9'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_10'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_11'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_12'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_13'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_14'>-x-</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_entry' id='calendar_entry_15'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_16'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_17'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_18'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_19'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_20'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_21'>-x-</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_entry' id='calendar_entry_22'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_23'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_24'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_25'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_26'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_27'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_28'>-x-</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_entry' id='calendar_entry_29'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_30'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_31'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_32'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_33'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_34'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_35'>-x-</td>
-                        </tr>
-                        <tr>
-                            <td class='calendar_entry' id='calendar_entry_36'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_37'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_38'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_39'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_40'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_41'>-x-</td>
-                            <td class='calendar_entry' id='calendar_entry_42'>-x-</td>
-                        </tr>
-                    </table>
+                <div style="display: none" id="calendarID1">
+                <div id="range">
+                    <input type="text" name="start" id="start1" class="datepicker-input">
+                    <span>to</span>
+                    <input type="text" name="end" id="end1" class="datepicker-input">
+                </div>
 
-                    <script type='text/javascript'>
-                        iniCalendar();
-
-                        /*0 = wie bisher, Datum wird in die Box geschrieben*/
-                        setReturnModus(1);
-                        /*1 = neu, Eventtext wird in die Box geschrieben
-                        Das event muss in der calendar.js in der Function
-                        getEventtext definiert werden.*/
-                        //setReturnModus(1);
-                    </script>
+                <script>
 
 
-                    <br />
-                    <br />
+                    const elem1 = document.getElementById('range');
+                    const datepicker1 = new DateRangePicker(elem1, {
+                        buttonClass: 'btn',
+                        todayHighlight: true,
+                    });
+
+                </script>
+            </div>
+
+
 
                 </div>
             </div>
         </div>
+
+    <div class="inner">
         <div class="spotlight">
             <div class="image">
-                <img src="images/pic02.jpg" alt="" />
+                <img src="picture/Parkhaus2.jpg" alt="" />
             </div>
             <div class="content">
                 <h3>Parkhaus 2</h3>
                 <p>TODO</p>
                 <ul class="actions">
-                    <li><a href="#" class="button alt">Vorbestellen</a></li>
+                    <li><a onclick="ShowKalender(2)" class="button alt">Vorbestellen</a></li>
                 </ul>
+                <div style="display: none" id="calendarID2">
+                <div id="range2">
+                    <input type="text" name="start" id="start2" class="datepicker-input">
+                    <span>to</span>
+                    <input type="text" name="end" id="end2" class="datepicker-input">
+                </div>
+
+                <script>
+
+
+                    const elem2 = document.getElementById('range2');
+                    const datepicker2 = new DateRangePicker(elem2, {
+                        buttonClass: 'btn',
+                        todayHighlight: true,
+                    });
+
+                </script>
+
+
+                </div>
+
+                </div>
             </div>
         </div>
+    <div class="inner">
         <div class="spotlight">
             <div class="image">
-                <img src="images/pic03.jpg" alt="" />
+                <img src="picture/Parkhaus3.jpg" alt="" />
             </div>
             <div class="content">
                 <h3>Parkhaus 3</h3>
                 <p>TODO</p>
                 <ul class="actions">
-                    <li><a href="#" class="button alt">Vorbestellen</a></li>
+                    <li><a onclick="ShowKalender(3)" class="button alt">Vorbestellen</a></li>
                 </ul>
+                <div style="display: none" id="calendarID3">
+                <div id="range3">
+                    <input type="text" name="start" id="start3" class="datepicker-input">
+                    <span>to</span>
+                    <input type="text" name="end" id="end3" class="datepicker-input">
+                </div>
+
+                <script>
+
+
+                    const elem3 = document.getElementById('range3');
+                    const datepicker3 = new DateRangePicker(elem3, {
+                        buttonClass: 'btn',
+                        todayHighlight: true,
+                    });
+
+                </script>
+
+
+
+                </div>
             </div>
 
         </div>
 
 
-    </div>
+</div>
 </section>
+
+
 
 
 
@@ -222,7 +222,7 @@
         <section>
             <h2>Contact</h2>
             <p>If you have any suggestions or request you wish us to follow in our upcoming updates feel free to contact us.</p>
-            <form action="mailto:group40@web.de?subject=Parko" class="alt" method="POST">
+            <form>
                 <div class="row uniform">
                     <div class="6u 12u$(xsmall)">
                         <input name="name" placeholder="Name" type="text">
@@ -267,6 +267,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
+
 
 </body>
 </html>

@@ -18,8 +18,8 @@
 <body>
 <!-- Banner -->
 <section id="banner">
-    <a href="#" class="fa fa-3x fa-user top-right" style="color: darkorange"></a>
-    <p class="text-success show-name" name="showname" id="showname" style="color: darkorange"></p>
+    <a href="Profile" class="fa fa-3x fa-user top-right" style="color: darkorange"></a>
+    <p class="text-success show-name"  name="showname" id="showname" style="color: darkorange"></p>
     <div class="inner split">
         <div>
             <h2>Welcome to Parko, a free Parking-Service by Group 40</h2>
@@ -43,29 +43,22 @@
     <div class="jumbotron">
 <div class="card">
     <div class="card-header">
-        Vorbestellungen
+        <h2>Vorbestellungen</h2>
     </div>
     <div class="card-body">
         <h5 class="card-title"></h5>
         <table class="table table-dark table-hover table-bordered">
             <thead>
             <tr>
-                <th scope="col">Nummer</th>
                 <th scope="col">Von</th>
                 <th scope="col">Bis</th>
-                <th scope="col">Aktionen</th>
+                <th scope="col">Kennzeichen</th>
+                <th scope="col">Bemerkungen</th>
+                <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>01.01.2020</td>
-                <td>03.01.2020</td>
-                <td class="float-right">
-                    <button type="button" class="btn btn-primary">Bearbeiten</button>
-                    <button type="button" class="btn btn-danger">Löschen</button>
-                </td>
-            </tr>
+            <tbody id ="vorbestellungfuellen">
+                
             </tbody>
         </table>
     </div>
@@ -74,7 +67,7 @@
 </div>
 
 
-
+<!-- Tabelle kann zeitnah geloescht werden -->
 
 <div class="container">
     <h2>Vorbestellung</h2>
@@ -90,59 +83,14 @@
         <tr>
             <td>John</td>
             <td>Doe</td>
-            <td>john@example.com</td>
+            <td class="float-right">
+                <button type="button" class="btn btn-primary">Bearbeiten</button>
+                <button type="button" class="btn btn-danger">Löschen</button>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
-
----
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th scope="col">Nummer</th>
-                    <th scope="col">Von</th>
-                    <th scope="col">Bis</th>
-                    <th scope="col">Aktionen</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>01.01.2020</td>
-                    <td>10.01.2020</td>
-                    <td>
-                        <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                        <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>02.01.2020</td>
-                    <td>03.01.2020</td>
-                    <td>
-                        <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                        <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>01.02.2020</td>
-                    <td>15.02.2020</td>
-                    <td>
-                        <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                        <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
----
 
 
 <!-- Contact -->
