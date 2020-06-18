@@ -39,13 +39,13 @@ function loadVorbestellung() {
                 var tabele  = document.getElementById('vorbestellungfuellen');
                 if(Array.isArray(Vorbestellung))
                     for(let x of Vorbestellung) {
-                    
+                    console.log(x);
                     tabele.innerHTML += '  <tr> \n'+
                     ' <td>'+x.von+'</td> \n'+
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(Vorbestellung.von, Vorbestellung.bis, Vorbestellung.Kennzeichen)" class="btn btn-danger">Stornieren</button></td>'+
+                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(x.von, x.bis, x.Kennzeichen)" class="btn btn-danger">Stornieren</button></td>'+
                     '</tr> \n' ;
                      }
                  else {
