@@ -35,7 +35,7 @@ function loadVorbestellung() {
             console.log(data.Status);
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
-                //console.log(Vorbestellung.bis);
+                console.log(Vorbestellung);
                 //document.getElementById('showname').innerHTML = Kunde.Name;
                 if(data.length > 0){
                     var temp = ";"
