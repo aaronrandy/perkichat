@@ -35,23 +35,27 @@ function loadVorbestellung() {
             console.log(data.Status);
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
-                console.log(Vorbestellung);
-                var von = data.split(",")[0];
-                console.log(von);
-                //document.getElementById('showname').innerHTML = Kunde.Name;
-                if(data.length > 0){
-                    var temp = ""
-                    for(var i=0; i<Vorbestellung.length;i++){
-                        var tr = "<tr>";
-                        tr += "<td>"+Vorbestellung[i][0]+"</td>";
-                        tr += "<td>"+Vorbestellung[i][1]+"</td>";
-                        tr += "<td>"+Vorbestellung[i][2]+"</td>";
-                        tr += "<td>"+Vorbestellung[i][3]+"</td>";
-                        tr += "</tr>";
-                        temp += tr;
-                    }
-                    document.getElementById("vorbestellungfuellen").innerHTML += temp;
-                }
+                     
+              
+                var tabele  = document.getElementById('vorbestellungfuellen');
+                if(Array.isArray(Vorbestellung))
+                    for(let x of Vorbestellung) {
+                    
+                    tabele.innerHTML += '  <tr> \n'+
+                    ' <td>'+x.von+'</td> \n'+
+                    ' <td>'+x.bis+'</td> \n'+
+                    ' <td>'+x.Kennzeichen+'</td> \n'+
+                    ' <td>'+x.Bemerkung+'</td> \n'+
+                    '</tr> \n' ;
+                     }
+                 else {
+                    tabele.innerHTML = '  <tr> \n'+
+                                ' <td>'+Vorbestellung.von+'</td> \n'+
+                                ' <td>'+Vorbestellung.bis+'</td> \n'+
+                                ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
+                                ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
+                     '</tr> \n' ;
+                 }
             }
             else
                 console.log(data.Information);
