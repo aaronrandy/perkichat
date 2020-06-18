@@ -1,4 +1,20 @@
-function showCalendar() {
+function showCalendar1() {
+    var x = document.getElementById("calendarID");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+function showCalendar2() {
+    var x = document.getElementById("calendarID");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+function showCalendar3() {
     var x = document.getElementById("calendarID");
     if (x.style.display === "block") {
         x.style.display = "none";
