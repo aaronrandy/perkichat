@@ -38,13 +38,16 @@ function loadVorbestellung() {
                 console.log(Vorbestellung);
                 //document.getElementById('showname').innerHTML = Kunde.Name;
                 if(data.length > 0){
-                    var temp = ";"
-                    data.forEach((u)=>{
-                        temp+="<tr>";
-                        temp+="<td>"+u.nummer+"</td>";
-                        temp+="<td>"+u.Von+"</td>";
-                        temp+="<td>"+u.Bis+"</td></tr>";
-                    })
+                    var temp = ""
+                    for(var i=0; i<Vorbestellung.length;i++){
+                        var tr = "<tr>";
+                        tr += "<td>"+Vorbestellung[i][0]+"</td>";
+                        tr += "<td>"+Vorbestellung[i][1]+"</td>";
+                        tr += "<td>"+Vorbestellung[i][2]+"</td>";
+                        tr += "<td>"+Vorbestellung[i][3]+"</td>";
+                        tr += "</tr>";
+                        temp += tr;
+                    }
                     document.getElementById("vorbestellungfuellen").innerHTML = temp;
                 }
             }
