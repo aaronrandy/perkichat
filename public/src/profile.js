@@ -46,7 +46,7 @@ function getcars() {
                 var inf= "";
                 console.log(Kunde);
                 for(let x of Kunde) {
-                  inf +=  x.Kennzeichen;
+                  inf +=  x.Kennzeichen + " ";
                 }
                 document.getElementById('vec').innerHTML = "Vehicles: "+ inf;
                 
