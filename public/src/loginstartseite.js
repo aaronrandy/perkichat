@@ -45,7 +45,7 @@ function loadVorbestellung() {
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" class="btn btn-danger">Stornieren</button></td>'+
+                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(x.von, x.bis, x.Kennzeichen)" class="btn btn-danger">Stornieren</button></td>'+
                     '</tr> \n' ;
                      }
                  else {
@@ -54,7 +54,7 @@ function loadVorbestellung() {
                                 ' <td>'+Vorbestellung.bis+'</td> \n'+
                                 ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
                                 ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
-                                '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" class="btn btn-danger">Stornieren</button></td> \n'+
+                                '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(von, bis, Kennzeichen)" class="btn btn-danger">Stornieren</button></td> \n'+
                      '</tr> \n' ;
                  }
             }
@@ -78,28 +78,30 @@ function getCookie() {
     return whole_cookie;
 }
 
-function deleteRow(){
-    var index, table = document.getElementById('vorbestellungfuellen');
-    for(var i = 1; i < table.rows.length; i++)
-    {
-        table.rows[i].cells[3].onclick = function()
-        {
-            var c = confirm("do you want to delete this row");
-            if(c === true)
-            {
-                index = this.parentElement.rowIndex;
-                table.deleteRow(index);
+function deleteVorbestellung(a,b,c){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 ) {
+
+            var data = JSON.parse(xhttp.responseText);
+            console.log(data.Status);
+            if(data.Status == true){
+
             }
+            else
+                window.location.replace("https://parkouni.tk/404");
+        }
+    };
 
-            //console.log(index);
-        };
-
-    }
+    console.log("Username: " +username + "Passwort: "+password);
+    xhttp.open("DELETE", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("username="+username+"&password="+password);
 }
+
 
 
 loadDoc();
 loadVorbestellung();
-deleteRow();
 
 
