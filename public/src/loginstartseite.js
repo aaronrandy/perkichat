@@ -45,7 +45,7 @@ function loadVorbestellung() {
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                        '<td><button type="button" class="btn btn-danger">Löschen</button></td>'+
+                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" class="btn btn-danger">Stornieren</button></td>'+
                     '</tr> \n' ;
                      }
                  else {
@@ -54,7 +54,7 @@ function loadVorbestellung() {
                                 ' <td>'+Vorbestellung.bis+'</td> \n'+
                                 ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
                                 ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
-                                '<td><button type="button" class="btn btn-danger">Löschen</button></td> \n'+
+                                '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" class="btn btn-danger">Stornieren</button></td> \n'+
                      '</tr> \n' ;
                  }
             }
@@ -78,8 +78,28 @@ function getCookie() {
     return whole_cookie;
 }
 
+function deleteRow(){
+    var index, table = document.getElementById('vorbestellungfuellen');
+    for(var i = 1; i < table.rows.length; i++)
+    {
+        table.rows[i].cells[3].onclick = function()
+        {
+            var c = confirm("do you want to delete this row");
+            if(c === true)
+            {
+                index = this.parentElement.rowIndex;
+                table.deleteRow(index);
+            }
+
+            //console.log(index);
+        };
+
+    }
+}
+
 
 loadDoc();
 loadVorbestellung();
+deleteRow();
 
 
