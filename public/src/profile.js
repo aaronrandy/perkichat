@@ -45,9 +45,12 @@ function getcars() {
                 var Kunde = JSON.parse(data.Information);
                 var inf= "";
                 console.log(Kunde);
-                for(let x of Kunde) {
+                if(Array.isArray(Kunde))
+                    for(let x of Kunde) {
                   inf +=  x.Kennzeichen + " ";
-                }
+                 }
+                 else 
+                    inf = Kunde.Kennzeichen ;
                 document.getElementById('vec').innerHTML = "Vehicles: "+ inf;
                 
             }
