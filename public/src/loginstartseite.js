@@ -36,6 +36,7 @@ function loadVorbestellung() {
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
                 console.log(Vorbestellung);
+                console.log(Vorbestellung[0]);
                 //document.getElementById('showname').innerHTML = Kunde.Name;
                 if(data.length > 0){
                     var temp = ""
@@ -48,7 +49,7 @@ function loadVorbestellung() {
                         tr += "</tr>";
                         temp += tr;
                     }
-                    document.getElementById("vorbestellungfuellen").innerHTML = temp;
+                    document.getElementById("vorbestellungfuellen").innerHTML += temp;
                 }
             }
             else
