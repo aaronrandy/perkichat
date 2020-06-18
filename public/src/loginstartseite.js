@@ -35,7 +35,7 @@ function loadVorbestellung() {
             console.log(data.Status);
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
-                     
+                     console.log(Vorbestellung);
               
                 var tabele  = document.getElementById('vorbestellungfuellen');
                 if(Array.isArray(Vorbestellung))
