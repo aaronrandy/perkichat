@@ -22,14 +22,14 @@
 						<ul class="contact" style="vertical-align: middle;">
 							<li class="fa-user" style="font-size: 0.7cm;">
 								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="username" maxlength="10" type="text" placeholder="Username" required autocomplete="off" style="color: #64409e;"/>
+									<input id="username" type="text" placeholder="Username" required autocomplete="off" style="color: #64409e;"/>
 							
 								</div>
 								
 							</li> 
 							<li class="fa-lock" style="font-size: 0.7cm; text-align: center;">
 								<div class="field-wrap" style="background-color: aliceblue; width: 12cm;">
-									<input id="password" maxlength="50" type="password" placeholder="Password" required autocomplete="off" style="color: #64409e;"/>
+									<input id="password" type="password" placeholder="Password" required autocomplete="off" style="color: #64409e;"/>
 								</div>
 								
 							</li> 
@@ -78,8 +78,14 @@
 						<p>If you have any suggestions or requests you wish us to follow in our upcoming updates feel free to contact us.</p>
 						<form action="mailto:group40@web.de?subject=Parko" class="alt" method="POST">
 							<div class="row uniform">
+								<div class="6u 12u$(xsmall)">
+									<input name="name" placeholder="Name" type="text">
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input name="email" placeholder="Email" type="email">
+								</div>
 								<div class="12u$">
-									<textarea name="message" placeholder="Message" rows="4"></textarea>
+									<textarea  placeholder="Message" rows="4"></textarea>
  								</div>
 							</div>
  							<ul class="actions">
