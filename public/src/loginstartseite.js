@@ -35,8 +35,18 @@ function loadVorbestellung() {
             console.log(data.Status);
             if(data.Status == true){
                 var Vorbestellung = JSON.parse(data.Information);
-                //console.log(Vorbestellung.von);
+                //console.log(Vorbestellung.bis);
                 //document.getElementById('showname').innerHTML = Kunde.Name;
+                if(data.length > 0){
+                    var temp = ";"
+                    data.forEach((u)=>{
+                        temp+="<tr>";
+                        temp+="<td>"+u.nummer+"</td>";
+                        temp+="<td>"+u.Von+"</td>";
+                        temp+="<td>"+u.Bis+"</td></tr>";
+                    })
+                    document.getElementById("vorbestellungfuellen").innerHTML = temp;
+                }
             }
             else
                 console.log(data.Information);
@@ -57,6 +67,7 @@ function getCookie() {
     console.log(whole_cookie);
     return whole_cookie;
 }
+
 
 loadDoc();
 loadVorbestellung();
