@@ -54,8 +54,7 @@ function getcars() {
             else
                 document.getElementById('vec').innerHTML = "Vehicles: No Vehicles";
         }
-        else
-            window.location.replace("https://parkouni.tk/404"); 
+      
     };
 
     console.log("Username: " +username + "Passwort: "+password);
