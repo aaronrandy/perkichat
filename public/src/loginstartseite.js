@@ -67,7 +67,7 @@ function getCookie() {
     return whole_cookie;
 }
 
-function deleteVorbestellung(a,b,c){
+function deleteVorbestellung(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 ) {
@@ -89,7 +89,7 @@ function deleteVorbestellung(a,b,c){
 }
 
 function logout() {
-    document.cookie = name + '=; Max-Age=0'
+    document.cookie = name+'=; Max-Age=-99999999;';
     window.location.replace("https://parkouni.tk/");
 }
 
