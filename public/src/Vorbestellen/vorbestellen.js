@@ -65,6 +65,12 @@ function getcars() {
     xhttp.send("username="+username+"&password="+password);
 
 }
+function getCookie() {
+    var nameEquals ="logindaten=";
+    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];
+    console.log(whole_cookie);
+    return whole_cookie;
+}
 
 loadDoc();
 getcars();
