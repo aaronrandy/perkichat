@@ -75,7 +75,7 @@ function deleteVorbestellung(){
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                location.reload();
+
             }
             else
                 window.location.replace("https://parkouni.tk/404");
