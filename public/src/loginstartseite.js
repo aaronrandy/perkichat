@@ -1,3 +1,10 @@
+function proofCookie(){
+    if(document.cookie.indexOf('logindaten') == -1 ) {
+        window.location.replace("https://parkouni.tk/404");
+    }
+}
+
+
 function loadDoc() {
     var username = getCookie().split("&")[1];
     var password = getCookie().split("&")[0];
@@ -21,7 +28,6 @@ function loadDoc() {
     xhttp.open("POST", "https://parkouni.tk/api/Kunde?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username="+username+"&password="+password);
-   
 }
 
 function loadVorbestellung() {
@@ -86,8 +92,6 @@ function deleteVor(a, b, c) {
 }
 
 
-
-
 function getCookie() {
     var nameEquals ="logindaten=";
     var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
@@ -107,11 +111,7 @@ function logout() {
     window.location.replace("https://parkouni.tk/");
 }
 
-//function logout(cname) {
-//    createCookie(cookie_name,"",-1);
-//    window.location.replace("https://parkouni.tk/");
-//}
-
+proofCookie();
 loadDoc();
 loadVorbestellung();
 
