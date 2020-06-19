@@ -43,8 +43,8 @@ function loadVorbestellung() {
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button> </td> \n'+
-                         '<td><button type="button" onclick="deleteVor('+x.von+", "+x.bis+", "+x.Kennzeichen+')" class="btn btn-danger">Stornieren</button></td> \n'+
+                        '<td class="btn btn-primary"> Bearbeiten </td> \n'+
+                         '<td onclick="deleteVor('+x.von+", "+x.bis+", "+x.Kennzeichen+')" class="btn btn-danger">Stornieren</td> \n'+
                     '</tr> \n' ;
                      }
             }
