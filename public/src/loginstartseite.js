@@ -82,7 +82,7 @@ function deleteVor(a, b, c) {
     
     xhttp.open("DELETE", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("von="+a+"&bis="+b+"&kenn="+c);
+    xhttp.send("von="+b+"&bis="+a+"&kenn="+c);
 
 }
 
