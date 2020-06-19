@@ -66,7 +66,7 @@ function deleteVor(a, b, c) {
     console.log(a + " " + b + " " + c +" ");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+        if (xhttp.readyState == 4/* && xhttp.status == 200 */) {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
@@ -74,8 +74,8 @@ function deleteVor(a, b, c) {
             }else 
                 console.log(data);
         }
-            else if(xhttp.readyState == 4 && xhttp.status != 200)
-                 window.location.replace("https://parkouni.tk/404");
+           /* else if(xhttp.readyState == 4 && xhttp.status != 200)
+                 window.location.replace("https://parkouni.tk/404");*/
         };
   
 
