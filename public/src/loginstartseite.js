@@ -44,7 +44,7 @@ function loadVorbestellung() {
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
                     '<td > Bearbeiten </td> \n'+
-                    "<td> <a class=\"btn btn-danger\" onclick=\" deleteVor('$bis','$von','$Kennzeichen')\" >Stornieren</a></td> \n".replace('$bis',x.bis).replace('$von',x.von).replace('$Kennzeichen',x.Kennzeichen)+
+                    "<td> <a class=\"btn btn-danger\" onclick=\"deleteVor('$bis','$von','$Kennzeichen')\" >Stornieren</a></td> \n".replace('$bis',x.bis).replace('$von',x.von).replace('$Kennzeichen',x.Kennzeichen)+
                     '</tr> \n' ;
                      }
             }
