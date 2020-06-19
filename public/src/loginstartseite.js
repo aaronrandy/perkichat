@@ -76,8 +76,8 @@ function deleteVor(a, b, c) {
         }
             else if(xhttp.readyState == 4 && xhttp.status != 200)
                  window.location.replace("https://parkouni.tk/404");
-        }
-    };
+        };
+  
 
     
     xhttp.open("DELETE", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
