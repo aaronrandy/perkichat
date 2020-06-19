@@ -99,6 +99,10 @@ function deleteVorbestellung(a,b,c){
     xhttp.send("username="+username+"&password="+password);
 }
 
+function logout() {
+    document.cookie = name+'=; Max-Age=-99999999;';
+    window.location.replace("https://parkouni.tk/");
+}
 
 
 loadDoc();
