@@ -70,12 +70,12 @@ function deleteVor(a, b, c) {
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                console.log(data);
-            }else 
-                console.log(data);
+                location.reload();
+            }
+                
         }
-           /* else if(xhttp.readyState == 4 && xhttp.status != 200)
-                 window.location.replace("https://parkouni.tk/404");*/
+            else if(xhttp.readyState == 4 && xhttp.status != 200)
+                 window.location.replace("https://parkouni.tk/404");
         };
   
 
