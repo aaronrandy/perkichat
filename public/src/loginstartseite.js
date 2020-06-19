@@ -67,26 +67,7 @@ function getCookie() {
     return whole_cookie;
 }
 
-function deleteVorbestellung(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 ) {
 
-            var data = JSON.parse(xhttp.responseText);
-            console.log(data.Status);
-            if(data.Status == true){
-
-            }
-            else
-                window.location.replace("https://parkouni.tk/404");
-        }
-    };
-
-    console.log("von="+von+"&bis="+bis+"&Kennzeichen="+Kennzeichen);
-    xhttp.open("DELETE", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("von="+von+"&bis="+bis+"&Kennzeichen="+Kennzeichen);
-}
 
 function logout() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
