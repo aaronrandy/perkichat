@@ -77,9 +77,9 @@ function getCookie() {
 function vorbestellen(id){
 
     var carselections =document.getElementsByClassName("car-select")[id-1];
-    var ken =  carselections.options[carselections.selectedIndex];
-    var start = document.getElementById("start"+id);
-    var end = document.getElementById("end"+id)
+    var ken =  carselections.options[carselections.selectedIndex].value;
+    var start = document.getElementById("start"+id).value;
+    var end = document.getElementById("end"+id).value;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
