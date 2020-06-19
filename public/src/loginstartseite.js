@@ -43,7 +43,7 @@ function loadVorbestellung() {
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung('+x.von+', '+x.bis+', '+x.Kennzeichen+')" class="btn btn-danger">Stornieren</button></td>'+
+                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung('+x.von+", "+x.bis+", "+x.Kennzeichen+')" class="btn btn-danger">Stornieren</button></td>'+
                     '</tr> \n' ;
                      }
             }
@@ -83,7 +83,7 @@ function deleteVorbestellung(){
     };
 
     console.log("von="+von+"&bis="+bis+"&Kennzeichen="+Kennzeichen);
-    xhttp.open("POST", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
+    xhttp.open("DELETE", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("von="+von+"&bis="+bis+"&Kennzeichen="+Kennzeichen);
 }
