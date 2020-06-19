@@ -89,7 +89,7 @@ function deleteVorbestellung(){
 }
 
 function logout() {
-    document.cookie = name+'=; Max-Age=-99999999;';
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.replace("https://parkouni.tk/");
 }
 
