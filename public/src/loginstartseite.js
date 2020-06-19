@@ -1,6 +1,5 @@
 function proofCookie(){
-    var pcookie = getCookie("logindaten");
-    if(!pcookie){
+    if(document.cookie.indexOf('logindaten') == -1 ) {
         window.location.replace("https://parkouni.tk/404");
     }
 }
