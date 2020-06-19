@@ -3364,3 +3364,9 @@
 			right: 5rem;
 			top: 2rem;
 		}
+
+		.button-right{
+			position: absolute;
+			right: 9rem;
+			top: 3rem;
+		}
