@@ -58,7 +58,7 @@
 <!-- Banner -->
 <section id="banner">
     <a href="#" class="fa fa-3x fa-user top-right" style="color: darkorange"></a>
-    <p class="text-success show-name">Reiner Zufall</p>
+    <p class="text-success show-name" id="showName">Reiner Zufall</p>
     <div class="inner split">
         <div>
             <h2>Welcome to Parko, a free Parking-Service by Group 40</h2>
@@ -101,7 +101,6 @@
             <div class="content">
                 <h3>Parkaus 1</h3>
                 <p>TODO</p>
-                <p>Test</p>
                 <ul class="actions">
                     <li><a onclick="ShowKalender(1)" class="button alt">Vorbestellen</a></li>
                 </ul>
@@ -118,23 +117,23 @@
                     const elem1 = document.getElementById('range');
                     const datepicker1 = new DateRangePicker(elem1, {
                         buttonClass: 'btn',
-                        todayHighlight: true,
+                        todayHighlight: false,
+                        showOnFocus: true
                     });
 
                 </script>
                     <br>
-                    <label for="car-select">Please Choose  ur car:</label>
+                    <label >Please Choose  ur car:</label>
 
-                    <select name="pets" id="car-select">
-                        <option value="car1">car1</option>
-                        <option value="car2">car2</option>
-                        <option value="car3">car3</option>
+                    <select name="pets" class="car-select">
+
                     </select>
                     <br>
                     <ul class="actions">
 
-                        <li><a  onclick="" class="button alt">Bestätigen</a></li>
+                        <li style="float: right"><a onclick="" class="button alt">Bestätigen</a></li>
                     </ul>
+                    <br>
             </div>
 
 
@@ -172,17 +171,15 @@
 
                 </script>
                     <br>
-                    <label for="car-select2">Please Choose  ur car:</label>
+                    <label >Please Choose  ur car:</label>
 
-                    <select name="pets" id="car-select2">
-                        <option value="car1">car1</option>
-                        <option value="car2">car2</option>
-                        <option value="car3">car3</option>
+                    <select name="pets" class="car-select">
+
                     </select>
                     <br>
                     <ul class="actions">
 
-                        <li><a  onclick="" class="button alt">Bestätigen</a></li>
+                        <li style="float: right"><a onclick="" class="button alt">Bestätigen</a></li>
                     </ul>
 
                 </div>
@@ -222,17 +219,15 @@
 
                 </script>
                     <br>
-                    <label for="car-select3">Please Choose  ur car:</label>
+                    <label >Please Choose  ur car:</label>
 
-                    <select name="pets" id="car-select3">
-                        <option value="car1">car1</option>
-                        <option value="car2">car2</option>
-                        <option value="car3">car3</option>
+                    <select name="pets" class="car-select">
+
                     </select>
                     <br>
                     <ul class="actions">
 
-                        <li><a  onclick="" class="button alt">Bestätigen</a></li>
+                        <li style="float: right"><a onclick="" class="button alt">Bestätigen</a></li>
                     </ul>
 
 
