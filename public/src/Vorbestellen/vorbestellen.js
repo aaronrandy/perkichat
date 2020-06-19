@@ -72,5 +72,39 @@ function getCookie() {
     return whole_cookie;
 }
 
+
+
+function vorbestellen(id){
+
+    var carselections =document.getElementsByClassName("car-select")[id-1];
+    var ken =  carselections.options[carselections.selectedIndex];
+    var start = document.getElementById("start"+id);
+    var end = document.getElementById("end"+id)
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+
+            var data = JSON.parse(xhttp.responseText);
+      
+              console.log(data.Status);
+            if(data.Status == true ){
+                    console.log(data);
+
+            }
+           
+        }
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+            window.location.replace("https://parkouni.tk/404");
+    };
+
+
+    xhttp.open("POST", "https://parkouni.tk/api/AddVorbestellung?apikey=101", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("kennzeichen="+ken+"&date1="+start+"&date2="+end+"&phid="+id+"&pnr="+id); 
+    
+}
+
+
+
 loadDoc();
 getcars();
