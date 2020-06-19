@@ -44,7 +44,7 @@ function loadVorbestellung() {
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
                     '<td > Bearbeiten </td> \n'+
-                    '<td onclick="deleteVor('+x.von+', '+x.bis+','+x.Kennzeichen+');" >Stornieren</td> \n'+
+                    '<td> <a class="btn btn-danger" onclick= "${x.bis},${x.von},${x.Kennzeichen}" >Stornieren</a></td> \n'+
                     '</tr> \n' ;
                      }
             }
@@ -62,7 +62,7 @@ function loadVorbestellung() {
 
 
 
-function deleteVor(a,b,c) {
+function deleteVor(a, b, c) {
     console.log(a + " " + b + " " + c +" ");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
