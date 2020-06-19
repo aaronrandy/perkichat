@@ -95,12 +95,19 @@ function getCookie() {
     return whole_cookie;
 }
 
-
-
-function logout(cname) {
-    createCookie(cookie_name,"",-1);
-    window.location.replace("https://parkouni.tk/");
+function logout( name, path, domain ) {
+    if( get_cookie( name ) ) {
+        document.cookie = name + "=" +
+            ((path) ? ";path="+path:"")+
+            ((domain)?";domain="+domain:"") +
+            ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+    }
 }
+
+//function logout(cname) {
+//    createCookie(cookie_name,"",-1);
+//    window.location.replace("https://parkouni.tk/");
+//}
 
 loadDoc();
 loadVorbestellung();
