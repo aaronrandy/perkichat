@@ -82,9 +82,10 @@ function vorbestellen(id){
     var end = document.getElementById("end"+id).value;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
+        var data = JSON.parse(xhttp.responseText);
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
-            var data = JSON.parse(xhttp.responseText);
+           
       
               console.log(data.Status);
             if(data.Status == true ){
@@ -94,7 +95,7 @@ function vorbestellen(id){
            
         }
         else if(xhttp.readyState == 4 && xhttp.status != 200)
-            window.location.replace("https://parkouni.tk/404");
+            console.log(data);
     };
 
 
