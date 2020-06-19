@@ -3367,6 +3367,12 @@
 
 		.button-right{
 			position: absolute;
-			right: 14rem;
+			right: 18rem;
 			top: 1rem;
+		}
+
+		.divider{
+			width:5px;
+			height:auto;
+			display:inline-block;
 		}
