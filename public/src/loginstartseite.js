@@ -37,25 +37,16 @@ function loadVorbestellung() {
                      console.log(Vorbestellung);
                      console.log(Vorbestellung);
                 var tabele  = document.getElementById('vorbestellungfuellen');
-                if(Array.isArray(Vorbestellung))
                     for(let x of Vorbestellung) {
                     tabele.innerHTML += '  <tr> \n'+
                     ' <td>'+x.von+'</td> \n'+
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                        '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(x.von, x.bis, x.Kennzeichen)" class="btn btn-danger">Stornieren</button></td>'+
+                    '<td > Bearbeiten </td> \n'+
+                    "<td> <a class=\"btn btn-danger\" onclick=\"deleteVor('"+x.bis+"','"+x.von+"','"+x.Kennzeichen+"')\" >Stornieren</a></td> \n"+
                     '</tr> \n' ;
                      }
-                 else {
-                    tabele.innerHTML = '  <tr> \n'+
-                                ' <td>'+Vorbestellung.von+'</td> \n'+
-                                ' <td>'+Vorbestellung.bis+'</td> \n'+
-                                ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
-                                ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
-                                '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(Vorbestellung.von, Vorbestellung.bis, Vorbestellung.Kennzeichen)" class="btn btn-danger">Stornieren</button></td> \n'+
-                     '</tr> \n' ;
-                 }
             }
             else if(xhttp.readyState == 4 && xhttp.status != 200)
              window.location.replace("https://parkouni.tk/404");
@@ -70,6 +61,34 @@ function loadVorbestellung() {
 }
 
 
+
+function deleteVor(a, b, c) {
+    console.log(a + " " + b + " " + c +" ");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+            var data = JSON.parse(xhttp.responseText);
+            console.log(data.Status);
+            if(data.Status == true){
+                location.reload();
+            }
+                
+        }
+            else if(xhttp.readyState == 4 && xhttp.status != 200)
+                 window.location.replace("https://parkouni.tk/404");
+        };
+  
+
+    
+    xhttp.open("DELETE", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("von="+b+"&bis="+a+"&kenn="+c);
+
+}
+
+
+
+
 function getCookie() {
     var nameEquals ="logindaten=";
     var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
@@ -77,34 +96,15 @@ function getCookie() {
     return whole_cookie;
 }
 
-function deleteVorbestellung(a,b,c){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 ) {
 
-            var data = JSON.parse(xhttp.responseText);
-            console.log(data.Status);
-            if(data.Status == true){
-                var tabelle  = document.getElementById('vorbestellungfuellen');
-                tabelle.deleteRow(a,b,c)
-            }
-            else
-                window.location.replace("https://parkouni.tk/404");
-        }
-    };
 
-    console.log("Username: " +username + "Passwort: "+password);
-    xhttp.open("POST", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username="+username+"&password="+password);
-}
-
+/*
 function logout() {
-    document.cookie = name + '=; Max-Age=0'
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.replace("https://parkouni.tk/");
 }
 
-
+*/
 loadDoc();
 loadVorbestellung();
 
