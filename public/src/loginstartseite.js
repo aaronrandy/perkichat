@@ -37,7 +37,6 @@ function loadVorbestellung() {
                      console.log(Vorbestellung);
                      console.log(Vorbestellung);
                 var tabele  = document.getElementById('vorbestellungfuellen');
-                if(Array.isArray(Vorbestellung))
                     for(let x of Vorbestellung) {
                     tabele.innerHTML += '  <tr> \n'+
                     ' <td>'+x.von+'</td> \n'+
@@ -47,15 +46,6 @@ function loadVorbestellung() {
                         '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung('+x.von+', '+x.bis+', '+x.Kennzeichen+')" class="btn btn-danger">Stornieren</button></td>'+
                     '</tr> \n' ;
                      }
-                 else {
-                    tabele.innerHTML = '  <tr> \n'+
-                                ' <td>'+Vorbestellung.von+'</td> \n'+
-                                ' <td>'+Vorbestellung.bis+'</td> \n'+
-                                ' <td>'+Vorbestellung.Kennzeichen+'</td> \n'+
-                                ' <td>'+Vorbestellung.Bemerkung+'</td> \n'+
-                                '<td><button type="button" class="btn btn-primary">Bearbeiten</button><button type="button" onclick="deleteVorbestellung(Vorbestellung.von, Vorbestellung.bis, Vorbestellung.Kennzeichen)" class="btn btn-danger">Stornieren</button></td> \n'+
-                     '</tr> \n' ;
-                 }
             }
             else if(xhttp.readyState == 4 && xhttp.status != 200)
              window.location.replace("https://parkouni.tk/404");
@@ -85,18 +75,17 @@ function deleteVorbestellung(a,b,c){
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
             if(data.Status == true){
-                var tabelle  = document.getElementById('vorbestellungfuellen');
-                tabelle.deleteRow(a,b,c)
+                location.reload();
             }
             else
                 window.location.replace("https://parkouni.tk/404");
         }
     };
 
-    console.log("Username: " +username + "Passwort: "+password);
+    console.log("von="+von+"&bis="+bis+"&Kennzeichen="+Kennzeichen);
     xhttp.open("POST", "https://parkouni.tk/api/Vorbestellung?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username="+username+"&password="+password);
+    xhttp.send("von="+von+"&bis="+bis+"&Kennzeichen="+Kennzeichen);
 }
 
 function logout() {
