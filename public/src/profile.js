@@ -70,9 +70,12 @@ function getcars() {
 
 
 function getCookie() {
+    try{
     var nameEquals ="logindaten=";
-    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
-   
+    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];
+    }catch(e){
+        window.location.replace("https://parkouni.tk/404");
+    }
     return whole_cookie;
 }
 

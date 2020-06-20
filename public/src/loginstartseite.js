@@ -96,12 +96,14 @@ function deleteVor(a, b, c) {
 
 
 function getCookie() {
+    try{
     var nameEquals ="logindaten=";
-    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
-    console.log(whole_cookie);
+    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];
+    }catch(e){
+        window.location.replace("https://parkouni.tk/404");
+    }
     return whole_cookie;
 }
-
 function logout() {
     var cookies = document.cookie.split(";");
 
