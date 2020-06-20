@@ -109,19 +109,19 @@ function vorbestellen(id){
 
 function getPK(x) {
 
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
-            var data = JSON.parse(xhttp.responseText);
-          var carselections =document.getElementsByClassName("pk-select")[x];
+            let data = JSON.parse(xhttp.responseText);
+          let carselections =document.getElementsByClassName("pk-select")[x];
               console.log(data.Status);
             if(data.Status == true ){
-                var Kunde = JSON.parse(data.Information);
-                    
+                let Kunde = JSON.parse(data.Information);
+
             
                 console.log("AFFE::: " +carselections);
-                    for(var x of Kunde) 
+                    for(let x of Kunde) 
                         carselections.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
                     
 
