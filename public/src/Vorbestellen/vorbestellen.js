@@ -151,7 +151,7 @@ function getPK1() {
         
           var carselections1 =document.getElementById("pk-select1");
           carselections1.innerHTML = "";
-          document.getElementById("info1").innerHTML = JSON.parse(data.Best).Optimal;
+          document.getElementById("info1").innerHTML = JSON.parse(data.Best)[0].Optimal;
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
@@ -189,7 +189,7 @@ function getPK2() {
             let data = JSON.parse(xhttp.responseText);
           var carselections2 =document.getElementById("pk-select2");
           carselections2.innerHTML = "";
-          document.getElementById("info2").innerHTML = JSON.parse(data.Best).Optimal;
+          document.getElementById("info2").innerHTML = JSON.parse(data.Best)[0].Optimal;
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
@@ -226,7 +226,7 @@ function getPK3() {
             let data = JSON.parse(xhttp.responseText);
           var carselections3 =document.getElementById("pk-select3");
           carselections3.innerHTML = "";
-            document.getElementById("info3").innerHTML = JSON.parse(data.Best).Optimal;
+            document.getElementById("info3").innerHTML = JSON.parse(data.Best)[0].Optimal;
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
