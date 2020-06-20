@@ -114,7 +114,7 @@ function getPK(x) {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             let data = JSON.parse(xhttp.responseText);
-          let carselections =document.getElementsByClassName("pk-select")[x];
+          var carselections =document.getElementsByClassName("pk-select")[x];
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
