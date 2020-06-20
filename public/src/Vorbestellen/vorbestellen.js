@@ -91,7 +91,7 @@ function vorbestellen(id){
       
               console.log(data5.Status);
             if(data5.Status == true ){
-                    console.log(data5);
+                window.location.replace("https://parkouni.tk/LoginStartseite");
 
             }
            
