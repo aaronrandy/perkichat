@@ -10,7 +10,7 @@ function loadDoc() {
     var password = getCookie().split("&")[0];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 ) {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ){
 
             var data = JSON.parse(xhttp.responseText);
             console.log(data.Status);
@@ -19,9 +19,10 @@ function loadDoc() {
                 console.log(Kunde.Name);
                 document.getElementById('showName').innerHTML = Kunde.Vorname + " " + Kunde.Name ;
             }
-            else if(xhttp.readyState == 4 && xhttp.status != 200)
-                 window.location.replace("https://parkouni.tk/404");
-        }
+           
+         }
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+            window.location.replace("https://parkouni.tk/404");
     };
 
     console.log("Username: " +username + "Passwort: "+password);
