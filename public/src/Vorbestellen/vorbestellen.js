@@ -107,40 +107,38 @@ function vorbestellen(id){
     
 }
 
-function getPK(x,f) {
-    console.log(x);
+function getPK(x) {
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
-            let data = JSON.parse(xhttp.responseText);
-          let d =document.getElementById(x);
+            var data = JSON.parse(xhttp.responseText);
+          var carselections =document.getElementsByClassName("pk-select")[x];
               console.log(data.Status);
             if(data.Status == true ){
-                let Kunde = JSON.parse(data.Information);
-              
-                    for(let f of Kunde) 
-                        d.innerHTML +="<option value=\""+f.PNr+"\">"+f.Pnr+"</option>";
+                var Kunde = JSON.parse(data.Information);
+                var inf= "";
+                console.log(Kunde);
+               
+                    for(let x of Kunde) 
+                        carselections.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
                     
 
             }
             else
-                 d.innerHTML ="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+                 carselections.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
         else if(xhttp.readyState == 4 && xhttp.status != 200)
             window.location.replace("https://parkouni.tk/404");
     };
 
 
-    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+f+"?apikey=101", true); 
+    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+(x+1)+"?apikey=101", true); 
     xhttp.send();
 
 }
-for(let a = 1 ; a <= 2 ; a++){
-    getPK("pk-select"+a,a);
-   
-}
-document.getElementById("pk-select3").innerHTML ="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
-
+for(var i = 0 ; i < 3 ; i++)
+    getPK(i);
 loadDoc();
 getcars();
