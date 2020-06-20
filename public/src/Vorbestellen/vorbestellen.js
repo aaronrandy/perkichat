@@ -138,7 +138,9 @@ function getPK(x) {
     xhttp.send();
 
 }
-for(var i = 0 ; i < 3 ; i++)
-    getPK(i);
+
+    getPK(0);
+    getPK(1);
+    getPK(2);
 loadDoc();
 getcars();
