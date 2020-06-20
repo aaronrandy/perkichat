@@ -120,7 +120,7 @@ function getPK(x) {
                 var Kunde = JSON.parse(data.Information);
                 var inf= "";
                 console.log(Kunde);
-               
+                console.log("AFFE::: " +carselections);
                     for(let x of Kunde) 
                         carselections.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
                     
