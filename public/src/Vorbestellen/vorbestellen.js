@@ -118,11 +118,11 @@ function getPK(x) {
               console.log(data.Status);
             if(data.Status == true ){
                 var Kunde = JSON.parse(data.Information);
-                var inf= "";
-                console.log(Kunde);
+                    
+            
                 console.log("AFFE::: " +carselections);
-                    for(let x of Kunde) 
-                        carselections.innerHTML ="\n<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
+                    for(var x of Kunde) 
+                        carselections.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
                     
 
             }
