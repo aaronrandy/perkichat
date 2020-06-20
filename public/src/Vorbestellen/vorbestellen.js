@@ -82,10 +82,10 @@ function vorbestellen(id){
     var pid =  pkselections.options[pkselections.selectedIndex].value;
     var start = document.getElementById("start"+id).value;
     var end = document.getElementById("end"+id).value;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        var data = JSON.parse(xhttp.responseText);
-        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+    var xhttp5 = new XMLHttpRequest();
+    xhttp5.onreadystatechange = function() {
+        var data = JSON.parse(xhttp5.responseText);
+        if (xhttp5.readyState == 4 && xhttp5.status == 200 ) {
 
            
       
@@ -96,14 +96,14 @@ function vorbestellen(id){
             }
            
         }
-        else if(xhttp.readyState == 4 && xhttp.status != 200)
+        else if(xhttp5.readyState == 4 && xhttp5.status != 200)
             console.log(data);
     };
 
 
-    xhttp.open("POST", "https://parkouni.tk/api/AddVorbestellung?apikey=101", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("kennzeichen="+ken+"&date1="+start+"&date2="+end+"&phid="+id+"&pnr="+pid); 
+    xhttp5.open("POST", "https://parkouni.tk/api/AddVorbestellung?apikey=101", true);
+    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp5.send("kennzeichen="+ken+"&date1="+start+"&date2="+end+"&phid="+id+"&pnr="+pid); 
     
 }
 
