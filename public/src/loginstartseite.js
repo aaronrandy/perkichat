@@ -19,7 +19,7 @@ function loadDoc() {
                 console.log(Kunde.Name);
                 document.getElementById('showName').innerHTML = Kunde.Vorname + " " + Kunde.Name ;
             }
-            else
+            else if(xhttp.readyState == 4 && xhttp.status != 200)
                  window.location.replace("https://parkouni.tk/404");
         }
     };
