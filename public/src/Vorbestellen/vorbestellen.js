@@ -101,10 +101,10 @@ function vorbestellen(id){
     var end = document.getElementById("end"+id).value;
     let xhttp5 = new XMLHttpRequest();
     xhttp5.onreadystatechange = function() {
-        
+        var data5 = JSON.parse(xhttp5.responseText);
         if (xhttp5.readyState == 4 && xhttp5.status == 200 ) {
 
-            var data5 = JSON.parse(xhttp5.responseText);
+          
       
               console.log(data5.Status);
             if(data5.Status == true ){
@@ -114,7 +114,7 @@ function vorbestellen(id){
            
         }
         else if(xhttp5.readyState == 4 && xhttp5.status != 200){
-            var info = "";
+            var info = data5.Information;
             if(info.includes("20001"))
                 info = "Sie haben Hausverbot";
             else if (info.includes("20002"))
