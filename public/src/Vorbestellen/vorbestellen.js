@@ -108,7 +108,7 @@ function vorbestellen(id){
 }
 
 function getPK(x) {
-
+    console.log(x);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
@@ -125,7 +125,7 @@ function getPK(x) {
 
             }
             else
-                 d.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+                 d.innerHTML ="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
         else if(xhttp.readyState == 4 && xhttp.status != 200)
             window.location.replace("https://parkouni.tk/404");
@@ -138,7 +138,7 @@ function getPK(x) {
 }
 for(let a = 1 ; a <= 3 ; a++){
     getPK("pk-select"+a);
-    console.log(a);
+   
 }
 loadDoc();
 getcars();
