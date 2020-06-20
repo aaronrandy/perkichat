@@ -120,15 +120,14 @@ function getPK(x) {
                 var Kunde = JSON.parse(data.Information);
                 var inf= "";
                 console.log(Kunde);
-                for(let y of carselections)
-                    for(let x of Kunde) {
-                        y.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
-                    }
+               
+                    for(let x of Kunde) 
+                        carselections.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
+                    
 
             }
             else
-                for(let y of carselections)
-                    y.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+                 carselections.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
         else if(xhttp.readyState == 4 && xhttp.status != 200)
             window.location.replace("https://parkouni.tk/404");
