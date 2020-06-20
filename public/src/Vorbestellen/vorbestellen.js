@@ -100,7 +100,18 @@ function vorbestellen(id){
             }
            
         }
-        else if(xhttp5.readyState == 4 && xhttp5.status != 200)
+        else if(xhttp5.readyState == 4 && xhttp5.status != 200){
+            var info = "";
+            if(info.includes("20001"))
+                info = "Sie haben Hausverbot";
+            else if (info.includes("20002"))
+                    info = "Sie haben ein falsches von Datum eingegeben \n Sie Können nicht mehr als 30 TAge im voraus bestellen.";
+            else if (info.includes("20003"))
+                    info = "Man kan nicht länger als 31 Tage Vorbestellen ";
+            else 
+                window.location.replace("https://parkouni.tk/404");
+           document.getElementById("warning"+id).innerHTML = info;
+        }
             console.log(data5);
     };
 
@@ -122,6 +133,7 @@ function getPK1() {
 
             let data = JSON.parse(xhttp.responseText);
           var carselections1 =document.getElementById("pk-select1");
+          document.getElementById("info1").innerHTML = data.Best;
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
@@ -155,6 +167,7 @@ function getPK2() {
 
             let data = JSON.parse(xhttp.responseText);
           var carselections2 =document.getElementById("pk-select2");
+          document.getElementById("info2").innerHTML = data.Best;
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
@@ -187,6 +200,7 @@ function getPK3() {
 
             let data = JSON.parse(xhttp.responseText);
           var carselections3 =document.getElementById("pk-select3");
+            document.getElementById("info3").innerHTML = data.Best;
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
