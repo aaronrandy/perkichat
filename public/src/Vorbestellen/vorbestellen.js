@@ -82,22 +82,22 @@ function vorbestellen(id){
     var pid =  pkselections.options[pkselections.selectedIndex].value;
     var start = document.getElementById("start"+id).value;
     var end = document.getElementById("end"+id).value;
-    var xhttp5 = new XMLHttpRequest();
+    let xhttp5 = new XMLHttpRequest();
     xhttp5.onreadystatechange = function() {
-        var data = JSON.parse(xhttp5.responseText);
+        
         if (xhttp5.readyState == 4 && xhttp5.status == 200 ) {
 
-           
+            var data5 = JSON.parse(xhttp5.responseText);
       
               console.log(data.Status);
-            if(data.Status == true ){
-                    console.log(data);
+            if(data5.Status == true ){
+                    console.log(data5);
 
             }
            
         }
         else if(xhttp5.readyState == 4 && xhttp5.status != 200)
-            console.log(data);
+            console.log(data5);
     };
 
 
