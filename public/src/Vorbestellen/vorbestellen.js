@@ -114,7 +114,7 @@ function getPK(x) {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             var data = JSON.parse(xhttp.responseText);
-          var d =document-getElementById(x);
+          var d =document.getElementById(x);
               console.log(data.Status);
             if(data.Status == true ){
                 var Kunde = JSON.parse(data.Information);
