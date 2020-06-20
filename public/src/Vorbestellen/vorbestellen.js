@@ -121,8 +121,8 @@ function vorbestellen(id){
                     info = "Sie haben ein falsches von Datum eingegeben \n Sie Können nicht mehr als 30 TAge im voraus bestellen.";
             else if (info.includes("20003"))
                     info = "Man kan nicht länger als 31 Tage Vorbestellen ";
-            else 
-                window.location.replace("https://parkouni.tk/404");
+         //   else 
+     //           window.location.replace("https://parkouni.tk/404");
            document.getElementById("warning"+id).innerHTML = info;
         }
             console.log(data5);
