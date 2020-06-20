@@ -123,7 +123,7 @@ function getPK1() {
                 let Kunde = JSON.parse(data.Information);
 
             
-                console.log("AFFE::: " +carselections.id);
+          //      console.log("AFFE::: " +carselections.id);
                     for(let x of Kunde) 
                         carselections1.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
                     
@@ -156,7 +156,7 @@ function getPK2() {
                 let Kunde = JSON.parse(data.Information);
 
             
-                console.log("AFFE::: " +carselections.id);
+            //    console.log("AFFE::: " +carselections.id);
                     for(let x of Kunde) 
                         carselections2.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
                     
@@ -188,7 +188,7 @@ function getPK3() {
                 let Kunde = JSON.parse(data.Information);
 
             
-                console.log("AFFE::: " +carselections.id);
+           //     console.log("AFFE::: " +carselections.id);
                     for(let x of Kunde) 
                         carselections3.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
                     
