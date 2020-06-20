@@ -148,8 +148,8 @@ function getPK1() {
             else
                  carselections1.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
-        else if(xhttp.readyState == 4 && xhttp.status != 200)
-            window.location.replace("https://parkouni.tk/404");
+      //  else if(xhttp.readyState == 4 && xhttp.status != 200)
+       //     window.location.replace("https://parkouni.tk/404");
     };
 
 
