@@ -107,14 +107,22 @@ function vorbestellen(id){
     
 }
 
-function getPK(x) {
+
+window.onload = function(){
+    getPK(1);
+    getPK(2);
+    getPK(3);
+}
+
+
+function getPK1() {
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             let data = JSON.parse(xhttp.responseText);
-          var carselections =document.getElementById("pk-select"+x);
+          var carselections1 =document.getElementById("pk-select1");
               console.log(data.Status);
             if(data.Status == true ){
                 let Kunde = JSON.parse(data.Information);
@@ -122,26 +130,92 @@ function getPK(x) {
             
                 console.log("AFFE::: " +carselections.id);
                     for(let x of Kunde) 
-                        carselections.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
+                        carselections1.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
                     
 
             }
             else
-                 carselections.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+                 carselections1.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
         else if(xhttp.readyState == 4 && xhttp.status != 200)
             window.location.replace("https://parkouni.tk/404");
     };
 
 
-    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+(x+1)+"?apikey=101", true); 
+    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+1+"?apikey=101",true); 
     xhttp.send();
 
 }
-window.onload = function(){
-    getPK(1);
-    getPK(2);
-    getPK(3);
+
+
+function getPK2() {
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+
+            let data = JSON.parse(xhttp.responseText);
+          var carselections2 =document.getElementById("pk-select2");
+              console.log(data.Status);
+            if(data.Status == true ){
+                let Kunde = JSON.parse(data.Information);
+
+            
+                console.log("AFFE::: " +carselections.id);
+                    for(let x of Kunde) 
+                        carselections2.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
+                    
+
+            }
+            else
+                 carselections2.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+        }
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+            window.location.replace("https://parkouni.tk/404");
+    };
+
+
+    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+2+"?apikey=101",true); 
+    xhttp.send();
+
 }
+
+function getPK3() {
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+
+            let data = JSON.parse(xhttp.responseText);
+          var carselections3 =document.getElementById("pk-select3");
+              console.log(data.Status);
+            if(data.Status == true ){
+                let Kunde = JSON.parse(data.Information);
+
+            
+                console.log("AFFE::: " +carselections.id);
+                    for(let x of Kunde) 
+                        carselections3.innerHTML = "<option value=\""+x.Pnr+"\">"+x.Pnr+"</option> ";
+                    
+
+            }
+            else
+                 carselections3.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+        }
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+            window.location.replace("https://parkouni.tk/404");
+    };
+
+
+    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+3+"?apikey=101",true); 
+    xhttp.send();
+
+}
+
+getPK1();
+getPK2();
+getPK3();
+
+
 loadDoc();
 getcars();
