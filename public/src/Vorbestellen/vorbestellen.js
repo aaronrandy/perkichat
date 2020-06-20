@@ -5,6 +5,17 @@ function ShowKalender(p) {
     } else {
         x.style.display = "none";
     }
+    switch(p){
+        case 1:
+            getPK1();
+            break;
+        case 2 : 
+        getPK2();
+        break;
+        case 3 : 
+        getPK3();
+        break;
+    }
 }
 function loadDoc() {
     var username = getCookie().split("&")[1];
@@ -32,6 +43,7 @@ function loadDoc() {
     xhttp.send("username="+username+"&password="+password);
 
 }
+
 function getcars() {
     var username = getCookie().split("&")[1];
     var password = getCookie().split("&")[0];
@@ -44,6 +56,7 @@ function getcars() {
               console.log(data.Status);
             if(data.Status == true ){
                 var Kunde = JSON.parse(data.Information);
+                
                 var inf= "";
                 console.log(Kunde);
                 for(let y of carselections)
@@ -130,12 +143,14 @@ function getPK1() {
     let xhttp = new XMLHttpRequest();
     var carselections =document.getElementsByClassName("car-select")[0];
     var ken =  carselections.options[carselections.selectedIndex].value;
+    
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             let data = JSON.parse(xhttp.responseText);
         
           var carselections1 =document.getElementById("pk-select1");
+          carselections1.innerHTML = "";
           document.getElementById("info1").innerHTML = data.Best;
               console.log(data.Status);
             if(data.Status == true ){
@@ -173,6 +188,7 @@ function getPK2() {
 
             let data = JSON.parse(xhttp.responseText);
           var carselections2 =document.getElementById("pk-select2");
+          carselections2.innerHTML = "";
           document.getElementById("info2").innerHTML = data.Best;
               console.log(data.Status);
             if(data.Status == true ){
@@ -209,6 +225,7 @@ function getPK3() {
 
             let data = JSON.parse(xhttp.responseText);
           var carselections3 =document.getElementById("pk-select3");
+          carselections3.innerHTML = "";
             document.getElementById("info3").innerHTML = data.Best;
               console.log(data.Status);
             if(data.Status == true ){
@@ -240,8 +257,5 @@ loadDoc();
 getcars();
 
 
-getPK1();
-getPK2();
-getPK3();
 
 
