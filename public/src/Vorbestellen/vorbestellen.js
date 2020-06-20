@@ -122,7 +122,7 @@ function getPK(x) {
                 console.log(Kunde);
                 console.log("AFFE::: " +carselections);
                     for(let x of Kunde) 
-                        carselections.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
+                        carselections.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option> \n";
                     
 
             }
