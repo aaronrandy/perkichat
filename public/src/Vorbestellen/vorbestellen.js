@@ -108,11 +108,6 @@ function vorbestellen(id){
 }
 
 
-window.onload = function(){
-    getPK(1);
-    getPK(2);
-    getPK(3);
-}
 
 
 function getPK1() {
