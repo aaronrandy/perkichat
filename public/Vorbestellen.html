@@ -148,7 +148,68 @@
                 </div>
             </div>
         </div>
-
+        <div class="inner">
+            <div class="spotlight">
+                <div class="image">
+                    <img src="picture/Parkhaus3.jpg" alt="" />
+                </div>
+                <div class="content">
+                    <h3>Parkhaus 3</h3>
+                    <p>TODO</p>
+                    <ul class="actions">
+                        <li><a onclick="ShowKalender(3)" class="button alt">Vorbestellen</a></li>
+                    </ul>
+                    <div style="display: none" id="calendarID3">
+    
+                    <div id="range3">
+                        <input type="text" name="start" id="start3" class="datepicker-input">
+                        <span>to</span>
+                        <input type="text" name="end" id="end3" class="datepicker-input">
+    
+                    </div>
+    
+    
+                    <script>
+    
+    
+                        const elem3 = document.getElementById('range3');
+                        const datepicker3 = new DateRangePicker(elem3, {
+                            buttonClass: 'btn',
+                            todayHighlight: true
+    
+    
+                        });
+    
+                    </script>
+                                      <br>
+                                      <label >Please Choose your car:</label>
+                  
+                                      <select class="car-select">
+                  
+                                      </select>
+                                      <br>
+                                      <br>
+                                      <label >Please Choose your Parkingspot:</label>
+                  
+                                      <select class="pk-select">
+                  
+                                      </select>
+                                    <br>
+                        <ul class="actions">
+    
+                            <li style="float: right"><a onclick="vorbestellen(3)" class="button alt">Bestätigen</a></li>
+                        </ul>
+    
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+    
+    </div>
+    
     <div class="inner">
         <div class="spotlight">
             <div class="image">
@@ -202,67 +263,7 @@
                 </div>
             </div>
         </div>
-    <div class="inner">
-        <div class="spotlight">
-            <div class="image">
-                <img src="picture/Parkhaus3.jpg" alt="" />
-            </div>
-            <div class="content">
-                <h3>Parkhaus 3</h3>
-                <p>TODO</p>
-                <ul class="actions">
-                    <li><a onclick="ShowKalender(3)" class="button alt">Vorbestellen</a></li>
-                </ul>
-                <div style="display: none" id="calendarID3">
-
-                <div id="range3">
-                    <input type="text" name="start" id="start3" class="datepicker-input">
-                    <span>to</span>
-                    <input type="text" name="end" id="end3" class="datepicker-input">
-
-                </div>
-
-
-                <script>
-
-
-                    const elem3 = document.getElementById('range3');
-                    const datepicker3 = new DateRangePicker(elem3, {
-                        buttonClass: 'btn',
-                        todayHighlight: true
-
-
-                    });
-
-                </script>
-                                  <br>
-                                  <label >Please Choose your car:</label>
-              
-                                  <select class="car-select">
-              
-                                  </select>
-                                  <br>
-                                  <br>
-                                  <label >Please Choose your Parkingspot:</label>
-              
-                                  <select class="pk-select">
-              
-                                  </select>
-                                <br>
-                    <ul class="actions">
-
-                        <li style="float: right"><a onclick="vorbestellen(3)" class="button alt">Bestätigen</a></li>
-                    </ul>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-</div>
+  
 </section>
 
 
