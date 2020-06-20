@@ -107,7 +107,7 @@ function vorbestellen(id){
     
 }
 
-function getPK(x) {
+function getPK(x,f) {
     console.log(x);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -132,12 +132,12 @@ function getPK(x) {
     };
 
 
-    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+(x+1)+"?apikey=101", true); 
+    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+f+"?apikey=101", true); 
     xhttp.send();
 
 }
 for(let a = 1 ; a <= 3 ; a++){
-    getPK("pk-select"+a);
+    getPK("pk-select"+a,a);
    
 }
 loadDoc();
