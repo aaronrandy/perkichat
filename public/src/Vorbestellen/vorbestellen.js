@@ -121,8 +121,8 @@ function getPK(x) {
                 var inf= "";
                 console.log(Kunde);
                
-                    for(let x of Kunde) 
-                        ds.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
+                    for(let f of Kunde) 
+                        ds.innerHTML +="<option value=\""+f.PNr+"\">"+f.Pnr+"</option>";
                     
 
             }
@@ -138,7 +138,7 @@ function getPK(x) {
     xhttp.send();
 
 }
-for(var i = 0 ; i < 3 ; i++)
+for(let i = 0 ; i < 3 ; i++)
     getPK(i);
 loadDoc();
 getcars();
