@@ -89,7 +89,7 @@ function vorbestellen(id){
 
             var data5 = JSON.parse(xhttp5.responseText);
       
-              console.log(data.Status);
+              console.log(data5.Status);
             if(data5.Status == true ){
                     console.log(data5);
 
