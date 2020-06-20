@@ -114,7 +114,7 @@ function getPK(x) {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             var data = JSON.parse(xhttp.responseText);
-          var carselections =document.getElementsByClassName("pk-select")[x];
+          var ds =document.getElementsByClassName("pk-select")[x];
               console.log(data.Status);
             if(data.Status == true ){
                 var Kunde = JSON.parse(data.Information);
@@ -122,12 +122,12 @@ function getPK(x) {
                 console.log(Kunde);
                
                     for(let x of Kunde) 
-                        carselections.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
+                        ds.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
                     
 
             }
             else
-                 carselections.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+                 ds.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
         else if(xhttp.readyState == 4 && xhttp.status != 200)
             window.location.replace("https://parkouni.tk/404");
