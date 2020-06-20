@@ -128,10 +128,13 @@ function vorbestellen(id){
 function getPK1() {
 
     let xhttp = new XMLHttpRequest();
+    var carselections =document.getElementsByClassName("car-select")[0];
+    var ken =  carselections.options[carselections.selectedIndex].value;
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
             let data = JSON.parse(xhttp.responseText);
+        
           var carselections1 =document.getElementById("pk-select1");
           document.getElementById("info1").innerHTML = data.Best;
               console.log(data.Status);
@@ -148,13 +151,14 @@ function getPK1() {
             else
                  carselections1.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
         }
-      //  else if(xhttp.readyState == 4 && xhttp.status != 200)
-       //     window.location.replace("https://parkouni.tk/404");
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+            window.location.replace("https://parkouni.tk/404");
     };
 
 
-    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+1+"?apikey=101",true); 
-    xhttp.send();
+    xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze"+"?apikey=101",true); 
+    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp5.send("kennzeichen="+ken+"&id="+1); 
 
 }
 
@@ -162,6 +166,8 @@ function getPK1() {
 function getPK2() {
 
     let xhttp = new XMLHttpRequest();
+    var carselections =document.getElementsByClassName("car-select")[0];
+    var ken =  carselections.options[carselections.selectedIndex].value;
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
@@ -187,14 +193,17 @@ function getPK2() {
     };
 
 
-    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+2+"?apikey=101",true); 
-    xhttp.send();
+    xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze"+"?apikey=101",true); 
+    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp5.send("kennzeichen="+ken+"&id="+1); 
 
 }
 
 function getPK3() {
 
     let xhttp = new XMLHttpRequest();
+    var carselections =document.getElementsByClassName("car-select")[0];
+    var ken =  carselections.options[carselections.selectedIndex].value;
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
@@ -220,15 +229,19 @@ function getPK3() {
     };
 
 
-    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+3+"?apikey=101",true); 
-    xhttp.send();
+    xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze"+"?apikey=101",true); 
+    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp5.send("kennzeichen="+ken+"&id="+1); 
 
 }
+
+
+loadDoc();
+getcars();
+
 
 getPK1();
 getPK2();
 getPK3();
 
 
-loadDoc();
-getcars();
