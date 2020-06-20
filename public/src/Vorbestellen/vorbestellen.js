@@ -136,9 +136,11 @@ function getPK(x,f) {
     xhttp.send();
 
 }
-for(let a = 1 ; a <= 3 ; a++){
+for(let a = 1 ; a <= 2 ; a++){
     getPK("pk-select"+a,a);
    
 }
+document.getElementById("pk-select3").innerHTML ="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+
 loadDoc();
 getcars();
