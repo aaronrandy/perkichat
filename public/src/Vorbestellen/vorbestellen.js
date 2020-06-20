@@ -113,11 +113,11 @@ function getPK(x,f) {
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200 ) {
 
-            var data = JSON.parse(xhttp.responseText);
-          var d =document.getElementById(x);
+            let data = JSON.parse(xhttp.responseText);
+          let d =document.getElementById(x);
               console.log(data.Status);
             if(data.Status == true ){
-                var Kunde = JSON.parse(data.Information);
+                let Kunde = JSON.parse(data.Information);
               
                     for(let f of Kunde) 
                         d.innerHTML +="<option value=\""+f.PNr+"\">"+f.Pnr+"</option>";
