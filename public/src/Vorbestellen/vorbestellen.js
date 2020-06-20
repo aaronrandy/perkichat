@@ -78,7 +78,7 @@ function vorbestellen(id){
 
     var carselections =document.getElementsByClassName("car-select")[id-1];
     var ken =  carselections.options[carselections.selectedIndex].value;
-    var pkselections =document.getElementsByClassName("pk-select")[id-1];
+    var pkselections =document.getElementById("pk-select"+id);
     var pid =  pkselections.options[pkselections.selectedIndex].value;
     var start = document.getElementById("start"+id).value;
     var end = document.getElementById("end"+id).value;
