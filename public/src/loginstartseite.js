@@ -45,6 +45,8 @@ function loadVorbestellung() {
                 var tabele  = document.getElementById('vorbestellungfuellen');
                     for(let x of Vorbestellung) {
                     tabele.innerHTML += '  <tr> \n'+
+                    ' <td>'+x.Ph_ID+'</td> \n'+
+                    ' <td>'+x.PNr+'</td> \n'+
                     ' <td>'+x.von+'</td> \n'+
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
