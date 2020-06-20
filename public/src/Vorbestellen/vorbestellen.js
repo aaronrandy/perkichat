@@ -172,8 +172,8 @@ function getPK1() {
 
 
     xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze"+"?apikey=101",true); 
-    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp5.send("kennzeichen="+ken+"&id="+1); 
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("kennzeichen="+ken+"&id="+1); 
 
 }
 
@@ -210,8 +210,8 @@ function getPK2() {
 
 
     xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze"+"?apikey=101",true); 
-    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp5.send("kennzeichen="+ken+"&id="+1); 
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("kennzeichen="+ken+"&id="+1); 
 
 }
 
@@ -247,8 +247,8 @@ function getPK3() {
 
 
     xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze"+"?apikey=101",true); 
-    xhttp5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp5.send("kennzeichen="+ken+"&id="+1); 
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("kennzeichen="+ken+"&id="+1); 
 
 }
 
