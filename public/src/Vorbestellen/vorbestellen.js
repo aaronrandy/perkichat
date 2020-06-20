@@ -78,6 +78,8 @@ function vorbestellen(id){
 
     var carselections =document.getElementsByClassName("car-select")[id-1];
     var ken =  carselections.options[carselections.selectedIndex].value;
+    var pkselections =document.getElementsByClassName("pk-select")[id-1];
+    var pid =  pkselections.options[pkselections.selectedIndex].value;
     var start = document.getElementById("start"+id).value;
     var end = document.getElementById("end"+id).value;
     var xhttp = new XMLHttpRequest();
@@ -101,11 +103,44 @@ function vorbestellen(id){
 
     xhttp.open("POST", "https://parkouni.tk/api/AddVorbestellung?apikey=101", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("kennzeichen="+ken+"&date1="+start+"&date2="+end+"&phid="+id+"&pnr="+id); 
+    xhttp.send("kennzeichen="+ken+"&date1="+start+"&date2="+end+"&phid="+id+"&pnr="+pid); 
     
 }
 
+function getPK(x) {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200 ) {
+
+            var data = JSON.parse(xhttp.responseText);
+          var carselections =document.getElementsByClassName("pk-select")[x];
+              console.log(data.Status);
+            if(data.Status == true ){
+                var Kunde = JSON.parse(data.Information);
+                var inf= "";
+                console.log(Kunde);
+                for(let y of carselections)
+                    for(let x of Kunde) {
+                        y.innerHTML +="<option value=\""+x.PNr+"\">"+x.Pnr+"</option>";
+                    }
+
+            }
+            else
+                for(let y of carselections)
+                    y.innerHTML="<option value=\""+"Empty"+"\">"+"No Parkingspots avaible"+"</option>";
+        }
+        else if(xhttp.readyState == 4 && xhttp.status != 200)
+            window.location.replace("https://parkouni.tk/404");
+    };
 
 
+    xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze/"+(x+1)+"?apikey=101", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("username="+username+"&password="+password);
+
+}
+for(var i = 0 ; i < 3 ; i++)
+    getPK(i);
 loadDoc();
 getcars();
