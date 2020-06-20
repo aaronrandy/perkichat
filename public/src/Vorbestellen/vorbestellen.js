@@ -22,7 +22,7 @@ function loadDoc() {
             }
           
         }
-        else 
+        else if(xhttp.readyState == 4 && xhttp.status != 200) 
          window.location.replace("https://parkouni.tk/404");
     };
 
