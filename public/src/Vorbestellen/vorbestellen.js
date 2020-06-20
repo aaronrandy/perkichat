@@ -135,9 +135,8 @@ function getPK(x) {
     };
 
 
-    xhttp.open("POST", "https://parkouni.tk/api/Parkplaetze/"+(x+1)+"?apikey=101", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username="+username+"&password="+password);
+    xhttp.open("GET", "https://parkouni.tk/api/Parkplaetze/"+(x+1)+"?apikey=101", true); 
+    xhttp.send();
 
 }
 for(var i = 0 ; i < 3 ; i++)
