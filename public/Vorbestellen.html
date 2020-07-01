@@ -24,6 +24,12 @@
 
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script src="dist/js/datepicker-full.min.js"></script>
 <script src="src/Vorbestellen/vorbestellen.js"></script>
@@ -56,18 +62,22 @@
 </style>
 <body>
 <!-- Banner -->
-<section id="banner">
-    <a href="#" class="fa fa-3x fa-user top-right" style="color: darkorange"></a>
-    <p class="text-success show-name" id="showname">Reiner Zufall</p>
-    <div class="inner split">
-        <div>
-            <h2>Welcome to Parko, a free Parking-Service by Group 40</h2>
+<div class ='navbar-fixed-top sticky' >
+<nav class="navbar navbar-default">
+    <a href="Profile" class="fa fa-3x fa-user top-right" style="color: darkorange"/>
+    <p class="text-success show-name"  name="showName" id="showName" style="color: darkorange"></p>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://parkouni.tk/">Parko</a>
         </div>
-        <section>
-            <p>Parko is a new and creative service that selects the perfect parking lot FOR YOU. Just sign up, deposit your preferred vehicle and you are immediately able to pre-order for your selected period. </p>
-        </section>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Meine Vorbestellunegn</a></li>
+            <li><a href="https://parkouni.tk/LoginStartseite">Vorbestellung</a></li>
+            <li><a href="https://parkouni.tk/Profile">Benutzer bearbeiten</a></li>
+        </ul>
     </div>
-</section>
+</nav>
+</div>
 
 
 <!-- One -->
