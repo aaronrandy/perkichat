@@ -19,7 +19,9 @@
 <!-- Banner -->
 <section id="banner">
     <a href="Profile" class="fa fa-3x fa-user top-right" style="color: darkorange"></a>
+    <div class="divider"></div>
     <p class="text-success show-name"  name="showName" id="showName" style="color: darkorange"></p>
+    <div class="divider"></div>
     <button type="button" onclick="logout()" class="btn btn-danger button-right">Logout</button>
     <div class="inner split">
         <div>
@@ -44,13 +46,17 @@
     <div class="jumbotron">
 <div class="card">
     <div class="card-header">
-        <h2>Vorbestellungen</h2>
+        <h2>Vorbestellungen</h2> 
+        <a class="btn btn-primary" style="
+        float: right" href="Vorbestellen">ADD</a>
     </div>
     <div class="card-body">
         <h5 class="card-title"></h5>
         <table class="table table-dark table-hover table-bordered">
             <thead>
             <tr>
+                <th scope="col">Parkhaus</th>
+                <th scope="col">Parkplatz</th>
                 <th scope="col">Von</th>
                 <th scope="col">Bis</th>
                 <th scope="col">Kennzeichen</th>

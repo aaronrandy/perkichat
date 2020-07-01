@@ -38,12 +38,7 @@ function setCookie(p,u) {
     document.cookie = "logindaten="+p+"&"+u+"; expires=Fri, 31 Dec 2038 23:59:59 UTC";
 
 }
-function getCookie() {
-    var nameEquals ="logindaten=";
-    var whole_cookie=document.cookie.split(nameEquals)[1].split(";")[0];   
-    console.log(whole_cookie);
-    return whole_cookie;
-}
+
 
 try{
     if (getCookie() != ""){
