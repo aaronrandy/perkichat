@@ -52,7 +52,7 @@ function loadVorbestellung() {
                     ' <td>'+x.bis+'</td> \n'+
                     ' <td>'+x.Kennzeichen+'</td> \n'+
                     ' <td>'+x.Bemerkung+'</td> \n'+
-                    "<td> <a class=\"btn btn-danger\" onclick=\"deleteVor('"+x.bis+"','"+x.von+"','"+x.Kennzeichen+"')\" >Stornieren</a></td> \n"+
+                    "<td> <a class=\"btn btn-danger\" onclick=\"deleteVor('"+x.bis+"','"+x.von+"','"+x.Kennzeichen+"')\" >Cancel Reservation</a></td> \n"+
                     '</tr> \n' ;
                      }
             }
